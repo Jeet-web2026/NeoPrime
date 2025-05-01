@@ -163,7 +163,7 @@
             </div>
             <div class="col-md-6 pe-5">
                 <div class="w-25 mb-3">
-                    <p class="text-capitalize mb-0 fs-5 shadow text-center fw-bold rounded-pill text-primary">about us</p>
+                    <h5 class="text-capitalize mb-0 fs-5 py-2 px-3 shadow text-center fw-bold rounded-pill text-primary">about us</h5>
                 </div>
                 <h2 class="text-capitalize fs-1 text-black font-500">preparing your success trusted IT services</h2>
                 <p class="mb-0 text-capitalize font-500 text-secondary">At NeoPrime, we're committed to preparing your success with trusted IT services tailored to your business goals. Our solutions ensure innovation, security, and long-term growth in today's competitive digital world.</p>
@@ -263,15 +263,38 @@
             <div class="card border-0 shadow-sm h-100 rounded-1">
                 <div class="card-body overflow-hidden">
                     <a href="javascript:void(0)" class="text-decoration-none position-relative">
-                        <h4 class="text-capitalize text-center fs-1 text-light fw-bold mb-3 position-absolute" style="left: 34%; top: -2rem;">watch our latest videos</h4>
-                        <span class="position-absolute start-50 border border-info rounded-circle shadow" style="bottom: -4.5rem; padding: 0px 8px;"><i class="bi bi-skip-start-circle fs-2 text-light"></i></span>
+                        <h4 class="text-capitalize text-center fs-1 text-light fw-bold mb-3 position-absolute" style="left: 34%; top: -4rem;">watch our latest videos</h4>
+                        <span class="position-absolute start-50 border border-info rounded-circle shadow" style="bottom: -2.5rem; padding: 0px 8px;"><i class="bi bi-skip-start-circle fs-2 text-light"></i></span>
                         <img src="https://img.freepik.com/free-photo/medium-shot-woman-restaurant_23-2150384773.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-video" class="h-100 w-100 object-fit-cover rounded-1">
+                        <marquee behavior="scroll" direction="left" onmouseover="this.stop()" onmouseleave="this.start()" class="position-absolute start-0" style="bottom: -13rem;">
+                            <div class="d-flex align-items-center">
+                                <h2 class="text-uppercase text-light me-3 fs-1">it consulting</h2>
+                                <h2 class="text-uppercase text-light me-3 fs-1">it consulting</h2>
+                                <h2 class="text-uppercase text-light me-3 fs-1">it consulting</h2>
+                                <h2 class="text-uppercase text-light me-3 fs-1">it consulting</h2>
+                                <h2 class="text-uppercase text-light me-3 fs-1">it consulting</h2>
+                            </div>
+                        </marquee>
                     </a>
                 </div>
             </div>
         </div>
     </section>
     {{--youtube videos section--}}
+
+    {{--show team members--}}
+    <section id="team-members">
+        <div class="container-fluid p-4">
+            <div class="card border-0 bg-transparent">
+                <div class="card-body">
+                    <div class="d-flex justify-content-start">
+                        <h5 class="text-capitalize fw-bold fs-5 text-primary py-2 px-3 shadow rounded-pill">our team</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{--show team members--}}
 
     <x-HomePopups />
     @section('extracss')
@@ -399,15 +422,22 @@
         /* youtube-videos start */
         #youtube-videos {
             background-color: #f7f7f7;
-            height: 25rem;
+            height: 30rem;
         }
 
         #youtube-videos .card-body {
-            height: 24rem;
+            height: 30rem;
             width: 100%;
         }
 
         /* youtube-videos end */
+
+        /* team-members start */
+        #team-members {
+            background-color: #f7f7f7;
+        }
+
+        /* team-members end */
     </style>
     @endsection
 
