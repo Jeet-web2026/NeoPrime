@@ -287,8 +287,19 @@
         <div class="container-fluid p-4">
             <div class="card border-0 bg-transparent">
                 <div class="card-body">
-                    <div class="d-flex justify-content-start">
-                        <h5 class="text-capitalize fw-bold fs-5 text-primary py-2 px-3 shadow rounded-pill">our team</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-start">
+                                <h5 class="text-capitalize fw-bold fs-5 text-primary py-2 px-3 shadow rounded-pill">our team</h5>
+                            </div>
+                            <div class="card border-0 bg-transparent mt-2 pe-5">
+                                <div class="card-body ps-0">
+                                    <h2 class="fs-1 text-black text-capitalize font-500">meet our professional team members</h2>
+                                    <p class="text-capitalize">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae voluptas odit eligendi. Dolore beatae tempora, maxime odio nesciunt dolorum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
                     </div>
                 </div>
             </div>
