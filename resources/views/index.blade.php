@@ -39,22 +39,20 @@
                                 <h3 class="text-capitalize fs-4 fw-bold text-black">get callback</h3>
                                 <form>
                                     <div class="mb-3">
-                                        <label for="connection-name" class="form-label font-500 text-black">Name</label>
-                                        <input type="password" class="form-control shadow-none" id="connection-name" name="connection-name">
+                                        <input type="password" placeholder="Full Name" class="form-control shadow-none" id="connection-name" name="connection-name">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="connection-email" class="form-label font-500 text-black">Email address</label>
-                                        <input type="email" class="form-control shadow-none" id="connection-email" name="connection-email">
+                                        <input type="email" placeholder="Email Adress" class="form-control shadow-none" id="connection-email" name="connection-email">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label font-500 text-black">Project topic</label>
                                         <select class="form-select shadow-none">
-                                            <option value="0">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="0">Choose Tour Project Type</option>
+                                            <option value="Learning Management System">Learning Management System</option>
+                                            <option value="Custom ERP software">Custom ERP software</option>
+                                            <option value="E-commerce">E-commerce</option>
                                         </select>
                                     </div>
+                                    <div class="g-recaptcha mb-2" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                     <button type="submit" class="btn border-0 shadow-sm enquiry-btn text-light">Enquire Now<i class="bi bi-arrow-right ms-2"></i></button>
                                 </form>
                             </div>
@@ -428,6 +426,12 @@
                 ]
             });
         });
+    </script>
+    @endsection
+
+    @section('extrajscdns')
+    <script src="https://www.google.com/recaptcha/api.js"
+        async defer>
     </script>
     @endsection
 </x-MainLayout>
