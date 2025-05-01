@@ -259,7 +259,13 @@
 
     {{--youtube videos section--}}
     <section id="youtube-videos">
-
+        <div class="container-fluid py-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    This is some text within a card body.
+                </div>
+            </div>
+        </div>
     </section>
     {{--youtube videos section--}}
 
@@ -385,6 +391,13 @@
         }
 
         /* populer-services end */
+
+        /* youtube-videos start */
+        #youtube-videos {
+            background-color: #f7f7f7;
+        }
+
+        /* youtube-videos end */
     </style>
     @endsection
 
