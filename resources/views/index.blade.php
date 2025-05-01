@@ -259,10 +259,12 @@
 
     {{--youtube videos section--}}
     <section id="youtube-videos">
-        <div class="container-fluid py-3">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    This is some text within a card body.
+        <div class="container-fluid py-3 h-100">
+            <div class="card border-0 shadow-sm h-100 rounded-1">
+                <div class="card-body overflow-hidden">
+                    <a href="javascript:void(0)">
+                        <img src="https://img.freepik.com/free-photo/medium-shot-woman-restaurant_23-2150384773.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-video" class="h-100 w-100 object-fit-cover rounded-1">
+                    </a>
                 </div>
             </div>
         </div>
@@ -395,6 +397,12 @@
         /* youtube-videos start */
         #youtube-videos {
             background-color: #f7f7f7;
+            height: 25rem;
+        }
+
+        #youtube-videos .card-body {
+            height: 24rem;
+            width: 100%;
         }
 
         /* youtube-videos end */
