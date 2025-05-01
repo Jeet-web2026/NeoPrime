@@ -262,7 +262,9 @@
         <div class="container-fluid py-3 h-100">
             <div class="card border-0 shadow-sm h-100 rounded-1">
                 <div class="card-body overflow-hidden">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" class="text-decoration-none position-relative">
+                        <h4 class="text-capitalize text-center fs-1 text-light fw-bold mb-3 position-absolute" style="left: 34%; top: -2rem;">watch our latest videos</h4>
+                        <span class="position-absolute start-50 border border-info rounded-circle shadow" style="bottom: -4.5rem; padding: 0px 8px;"><i class="bi bi-skip-start-circle fs-2 text-light"></i></span>
                         <img src="https://img.freepik.com/free-photo/medium-shot-woman-restaurant_23-2150384773.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-video" class="h-100 w-100 object-fit-cover rounded-1">
                     </a>
                 </div>
