@@ -80,7 +80,7 @@
                         <p class="text-uppercase fw-semibold text-light">latest announcements</p>
                         <div class="card border-0 bg-transparent" style="height: 8rem;">
                             <div class="card-body">
-                                <marquee behavior="scroll" direction="up" style="height: 8rem;">
+                                <marquee behavior="scroll" direction="up" onmouseenter="this.stop()" onmouseleave="this.start()" style="height: 8rem;">
                                     <div class="card mb-3 border-0 bg-transparent">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-md-3">
