@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg py-0" style="background-color: #000046;">
         <div class="container-fluid px-5">
             <a class="navbar-brand text-light" href="{{ url('/') }}">
-                <img src="{{ asset('essentials/images/main-logo.png') }}" alt="main-website-logo" class="main-web-side-logo">
+                <img src="{{ asset('essentials/images/website-logo-main.png') }}" alt="main-website-logo" class="main-web-side-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NeoCartNavbar" aria-controls="NeoCartNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

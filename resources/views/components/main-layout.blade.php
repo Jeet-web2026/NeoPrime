@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@if($subheading){{ $subheading }} |@endif {{ config('app.name') }}</title>
-    <link rel="shortcut icon" href="{{ asset('essentials/images/main-logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('essentials/images/website-logo-main.png') }}" type="image/x-icon">
     <meta name="Csrf-token" content="{{ csrf_token() }}">
     @if(isset($metadata) && isset($metadescription))
     <meta name="{{ $metadescription }}" content="{{ $metadata }}">
@@ -84,6 +84,12 @@
         }
 
         /* navbar css */
+        /* footer css */
+        .website-logo {
+            height: 5rem;
+            width: auto;
+        }
+        /* footer css */
     </style>
     {{--default css--}}
 

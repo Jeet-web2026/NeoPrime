@@ -1,4 +1,4 @@
-<x-MainLayout bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active">
+<x-MainLayout bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active" font2nd="active">
     {{--main content start--}}
     <main id="main-content">
         <div class="bg-overlay"></div>
