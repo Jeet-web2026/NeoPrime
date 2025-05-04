@@ -30,9 +30,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card h-100 w-100 bg-transparent border-0">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <div class="card contact-form mt-5 shadow bg-white">
+                <div class="card h-100 w-100 bg-transparent border-0 px-5">
+                    <div class="card-body d-flex justify-content-end align-items-center">
+                        <div class="card contact-form mt-5 shadow bg-white w-75">
                             <div class="card-body">
                                 <h3 class="text-capitalize fs-4 fw-bold text-black">get callback</h3>
                                 <form>
