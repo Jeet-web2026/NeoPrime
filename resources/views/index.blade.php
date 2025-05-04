@@ -406,7 +406,7 @@
                 <h5 class="fs-5 text-capitalize shadow rounded-pill px-4 py-2 text-primary fw-bold">our latest blogs</h5>
             </div>
             <h2 class="text-capitalize text-black fs-2 text-center mt-2">explore our latest blogs and events</h2>
-            <div class="row mt-5 blogs">
+            <div class="row mt-5 blogs px-3">
                 <div class="col p-2">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
@@ -610,6 +610,34 @@
         /* our-blogs start */
         #our-blogs {
             background-color: #f7f7f7;
+        }
+
+        #our-blogs .blogs .slick-prev {
+            border: 1px solid #000000;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #our-blogs .blogs .slick-prev::before {
+            font-family: normal;
+            font-size: 21px;
+            line-height: .6;
+            color: #000000;
+        }
+
+        #our-blogs .blogs .slick-next {
+            border: 1px solid #000000;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #our-blogs .blogs .slick-next::before {
+            font-family: normal;
+            font-size: 21px;
+            line-height: .6;
+            color: #000000;
         }
 
         /* our-blogs end */
