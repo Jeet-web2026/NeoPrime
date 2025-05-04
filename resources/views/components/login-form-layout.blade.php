@@ -1,5 +1,5 @@
-@props(['login' => ''])
-<x-SecondLayout bootstrap="active">
+@props(['login' => '', 'loginsubheading' => ''])
+<x-SecondLayout bootstrap="active" subheading="{{ $loginsubheading }}" >
     <main @if($login) id="{{ $login }}-login" @endif>
 
     </main>
