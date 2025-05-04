@@ -46,7 +46,7 @@
                         <a class="nav-link text-light" href="javascript:void(0)">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="javascript:void(0)">Contact</a>
+                        <a class="nav-link text-light" href="javascript:void(0)">Contact Us</a>
                     </li>
                 </ul>
             </div>
