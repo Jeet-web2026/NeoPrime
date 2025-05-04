@@ -15,5 +15,10 @@ class AuthenticationController extends Controller
     public function AdminVerify(AdminVerifyRequest $request)
     {
         $getData = $request->validated();
+
+        $matchData = [
+            'email' => $getData['admin-email'],
+            'password' => $getData['admin-password'],
+        ];
     }
 }
