@@ -1,4 +1,4 @@
-<x-SecondLayout subheading="Admin" bootstrap="active" bIcons="active">
+<x-SecondLayout subheading="Admin" bootstrap="active" bIcons="active" jQuery="active">
     <main id="admin-dashboard">
         <div class="row h-100">
             <div class="col-md-2">
@@ -9,9 +9,9 @@
                         </a>
                         <h5 class="text-light text-uppercase fw-semibold fs-5 text-center">super admin</h5>
                         <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
-                            <div class="card-body w-100 px-0">
+                            <div class="card-body w-100 px-0 admin-side-navigation">
                                 <ul class="ps-0 w-100">
-                                    <li class="text-capitalize fs-5 text-black bg-light shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3 mb-2">
+                                    <li class="text-capitalize fs-5 shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3 mb-2">
                                         <i class="bi bi-house-gear me-2"></i>
                                         dashboard
                                     </li>
@@ -32,5 +32,8 @@
     </main>
     @section('extracss')
     <x-admin-css />
+    @endsection
+    @section('extrajs')
+    <x-admin-js />
     @endsection
 </x-SecondLayout>
