@@ -34,6 +34,6 @@ class AuthenticationController extends Controller
     {
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
-        return redirect()->route('home')->with('success', 'Logged out successfully');
+        return redirect()->route('admin-login')->with('success', 'Logged out successfully');
     }
 }
