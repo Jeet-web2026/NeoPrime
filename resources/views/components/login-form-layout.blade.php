@@ -13,9 +13,10 @@
                         <div class="col-md-8 ps-2">
                             <div class="card-body pe-0">
                                 <form action="{{ route($login . '-verify') }}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="{{ $login }}-email" class="form-label text-black text-capitalize fw-semibold fs-5">Email address</label>
-                                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
+                                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email" value="{{ old($login . '-email') }}">
                                         @error($login . '-email')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
