@@ -1,34 +1,28 @@
 <?php
 
+use App\Models\AdminVerify;
+
 return [
 
     'guards' => [
-        'web' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'vendor' => [
-            'driver' => 'session',
-            'provider' => 'vendor_logins',
+            'provider' => 'admin_verifies',
         ],
     ],
 
 
     'providers' => [
-        'users' => [
+        'admin_verifies' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-        'vendor_logins' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\VendorLogin::class),
+            'model' => env('AUTH_MODEL', AdminVerify::class),
         ],
     ],
 
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'admin_verifies' => [
+            'provider' => 'admin_verifies',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
             'expire' => 60,
             'throttle' => 60,

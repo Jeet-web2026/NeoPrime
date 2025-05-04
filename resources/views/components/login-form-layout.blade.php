@@ -4,6 +4,12 @@
         @if($login == 'admin' || $login == 'partner')
         <div class="card shadow border-0 w-50 p-2" style="height: 60%;">
             <div class="card-body">
+                @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <div class="card mb-3 border-0 bg-transparent mt-3">
                     <div class="row g-0 w-100 align-items-center">
                         <div class="col-md-4 pe-2">

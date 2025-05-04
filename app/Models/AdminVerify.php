@@ -2,14 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class AdminVerify extends Model
+class AdminVerify extends Authenticatable
 {
     public $timestamps = false;
-    protected $table = 'admin_verify';
+    protected $table = 'admin_verifies';
     protected $fillable = [
         'admin_email',
-        'admin_password',
+        'password',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->admin_password;
+    }
 }
