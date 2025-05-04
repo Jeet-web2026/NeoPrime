@@ -1,4 +1,4 @@
-<x-SecondLayout subheading="Admin" bootstrap="active" bIcons="active" jQuery="active">
+<x-SecondLayout subheading="Admin" bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active">
     <main id="admin-dashboard">
         <div class="row h-100">
             <div class="col-md-2">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </nav>
-                <div class="card border-0 h-100 pt-5 bg-transparent">
+                <div class="card border-0 pt-5 bg-transparent overflow-auto" style="height: 100vh;">
                     <div class="card-body">
                         <div class="card border-0 shadow h-100 mt-1">
                             <div class="card-body">
@@ -118,6 +118,57 @@
                                                                 <li class="list-group-item">And a fifth one</li>
                                                             </ul>
                                                         </marquee>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mt-2">
+                                                <div class="card bg-transparnt shadow-sm">
+                                                    <div class="card-body px-5">
+                                                        <h5 class="text-capitalize fs-5 text-center mb-3">today's plan</h5>
+                                                        <div class="row plan">
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-2">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        This is some text within a card body.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

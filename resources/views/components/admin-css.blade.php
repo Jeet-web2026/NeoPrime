@@ -18,4 +18,32 @@
         height: 13rem;
         width: 20rem;
     }
+
+    #admin-dashboard .plan .slick-prev {
+        border: 1px solid #000000;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+    }
+
+    #admin-dashboard .plan .slick-prev::before {
+        font-family: normal;
+        font-size: 21px;
+        line-height: .6;
+        color: #000000;
+    }
+
+    #admin-dashboard .plan .slick-next {
+        border: 1px solid #000000;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+    }
+
+    #admin-dashboard .plan .slick-next::before {
+        font-family: normal;
+        font-size: 21px;
+        line-height: .6;
+        color: #000000;
+    }
 </style>
