@@ -12,14 +12,20 @@
                         </div>
                         <div class="col-md-8 ps-2">
                             <div class="card-body pe-0">
-                                <form>
+                                <form action="{{ route($login . '-verify') }}" method="POST">
                                     <div class="mb-3">
                                         <label for="{{ $login }}-email" class="form-label text-black text-capitalize fw-semibold fs-5">Email address</label>
                                         <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
+                                        @error($login . '-email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="{{ $login }}-password" class="form-label text-black text-capitalize fw-semibold fs-5">Password</label>
                                         <input type="password" class="form-control shadow-none text-black" id="{{ $login }}-password" name="{{ $login }}-password">
+                                        @error($login . '-password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <button type="submit" class="btn btn-outline-success shadow-none mt-4 w-100">Submit</button>
                                 </form>
