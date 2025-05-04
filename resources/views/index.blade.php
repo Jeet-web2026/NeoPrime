@@ -412,7 +412,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -421,7 +421,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -430,7 +430,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -439,7 +439,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -448,7 +448,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -638,6 +638,13 @@
             font-size: 21px;
             line-height: .6;
             color: #000000;
+        }
+
+        #our-blogs .blogs .card-img {
+            height: 9rem;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
         }
 
         /* our-blogs end */
