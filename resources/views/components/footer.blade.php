@@ -33,6 +33,12 @@
                 <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
                     <div class="card-body">
                         <p class="text-uppercase fw-semibold text-light">quick links</p>
+                        <ul class="ps-0">
+                            <a href="" class="text-decoration-none"><li class="list-style-none text-capitalize text-light mb-2">services</li></a>
+                            <a href="" class="text-decoration-none"><li class="list-style-none text-capitalize text-light mb-2">pricing</li></a>
+                            <a href="" class="text-decoration-none"><li class="list-style-none text-capitalize text-light mb-2">tech stack</li></a>
+                            <a href="" class="text-decoration-none"><li class="list-style-none text-capitalize text-light">portfolio</li></a>
+                        </ul>
                     </div>
                 </div>
             </div>
