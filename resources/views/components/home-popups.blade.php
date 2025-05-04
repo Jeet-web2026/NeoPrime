@@ -1,9 +1,9 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="hamburger-menu" aria-labelledby="hamburger-menuLabel">
-    <div class="offcanvas-header" style="background-color: #2e008b;">
-        <h5 class="offcanvas-title fs-5 text-capitalize fw-semibold text-light" id="hamburger-menuLabel">service panel</h5>
-        <button type="button" class="btn-close shadow-none btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-header border-bottom border-light" style="background-color: #ffffff;">
+        <h5 class="offcanvas-title fs-5 text-capitalize fw-semibold text-black" id="hamburger-menuLabel">service panel</h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body" style="background-color: #5404f51f;">
+    <div class="offcanvas-body" style="background-color: #2e008b;">
         <div class="card border-0 bg-transparent">
             <div class="card-body px-0">
                 <div class="card mb-3 border-0 shadow-sm position-relative py-1" style="background-color: #5404f5;">
