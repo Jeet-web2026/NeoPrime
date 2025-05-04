@@ -298,6 +298,40 @@
                                     <p class="text-capitalize">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae voluptas odit eligendi. Dolore beatae tempora, maxime odio nesciunt dolorum.</p>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 pe-2">
+                                    <div class="card border-0 bg-transparent">
+                                        <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <div class="card-body px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1">example</h5>
+                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-arrow-up-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ps-2">
+                                    <div class="card border-0 bg-transparent">
+                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <div class="card-body px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1">example</h5>
+                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-arrow-up-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6"></div>
                     </div>
@@ -446,6 +480,11 @@
         /* team-members start */
         #team-members {
             background-color: #f7f7f7;
+        }
+
+        #team-members img {
+            height: 12rem;
+            width: 100%;
         }
 
         /* team-members end */
