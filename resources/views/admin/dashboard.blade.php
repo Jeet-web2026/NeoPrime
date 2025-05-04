@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-md-10 bg-primary bg-opacity-25 position-relative">
-                <nav class="navbar navbar-expand-lg position-absolute w-100 top-0" style="background-color: #000046;">
+                <nav class="navbar navbar-expand-lg position-absolute w-100 top-0 z-1" style="background-color: #000046;">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -41,28 +41,75 @@
                                         <li><a class="dropdown-item" href="#">Action</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown mx-3">
+                                <li class="nav-item dropdown-center mx-3">
                                     <a class="nav-link text-capitalize text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         profile<i class="bi bi-plus ms-1"></i>
                                     </a>
                                     <ul class="dropdown-menu rounded-0 mt-2 shadow-sm border-0">
                                         <li><a class="dropdown-item text-capitalize" href="#">manage profile</a></li>
-                                        <li>
+                                        <li class="dropdown-item text-capitalize">
                                             <form action="{{ route('admin-logout') }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn shadow-none border-0">logout</button>
+                                                <button type="submit" class="btn shadow-none border-0 ps-0">logout</button>
                                             </form>
                                         </li>
                                     </ul>
                                 </li>
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2 shadow-none" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success shadow-none" type="submit"><i class="bi bi-search"></i></button>
+                                    <button class="btn btn-success shadow-none" type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </ul>
                         </div>
                     </div>
                 </nav>
+                <div class="card border-0 h-100 pt-5 bg-transparent">
+                    <div class="card-body">
+                        <div class="card border-0 shadow h-100 mt-1">
+                            <div class="card-body">
+                                <div class="card border-0 bg-transparent">
+                                    <div class="card-body p-0">
+                                        <div class="row">
+                                            <div class="col-md-4 pe-2">
+                                                <div class="card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
+                                                        <p class="text-uppercase mb-0 text-center text-black">pending projects</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-2">
+                                                <div class="card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
+                                                        <p class="text-uppercase mb-0 text-center text-black">new callback request</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 ps-2">
+                                                <div class="card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
+                                                        <p class="text-uppercase mb-0 text-center text-black">ongoing projects</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                <div class="card bg-transparent shadow-sm">
+                                                    <div class="card-body">
+                                                        <img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['January','February','March','April','May'],datasets:[{data:[50,60,70,180,190]}]}}" class="chart-img" alt="chart">
+                                                        <h3 class="fs-5 text-center text-capitalize mt-2">last 5 months data</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

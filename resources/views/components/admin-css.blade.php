@@ -13,4 +13,9 @@
         height: 6rem;
         width: 6rem;
     }
+
+    #admin-dashboard .col-md-10 .chart-img {
+        height: 13rem;
+        width: 20rem;
+    }
 </style>
