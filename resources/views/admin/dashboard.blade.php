@@ -47,7 +47,12 @@
                                     </a>
                                     <ul class="dropdown-menu rounded-0 mt-2 shadow-sm border-0">
                                         <li><a class="dropdown-item text-capitalize" href="#">manage profile</a></li>
-                                        <li><a class="dropdown-item text-capitalize" href="{{ route('admin-logout') }}">logout</a></li>
+                                        <li>
+                                            <form action="{{ route('admin-logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn shadow-none border-0">logout</button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </li>
                                 <form class="d-flex" role="search">
