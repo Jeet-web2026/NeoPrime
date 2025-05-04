@@ -40,5 +40,16 @@
                 }
             ]
         });
+
+        $(this).find('.admin-components .card').eq(0).siblings().hide();
+
+        function navgationSetup(NavgationNo) {
+            $(document).find('.admin-side-navigation li').eq(NavgationNo).on('click', function() {
+                $(document).find('.admin-components .card').eq(NavgationNo).show().siblings().hide();
+            });
+        }
+
+        navgationSetup(0);
+        navgationSetup(1);
     });
 </script>

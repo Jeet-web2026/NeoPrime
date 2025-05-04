@@ -65,7 +65,7 @@
                 </nav>
                 <div class="card border-0 pt-5 bg-transparent overflow-auto" style="height: 100vh;">
                     <div class="card-body">
-                        <div class="card border-0 shadow h-100 mt-1">
+                        <div class="card border-0 shadow h-100 mt-1 admin-components">
                             <div class="card-body">
                                 <div class="card border-0 bg-transparent">
                                     <div class="card-body p-0">
@@ -174,6 +174,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="card">
+                                    hello
                                 </div>
                             </div>
                         </div>
