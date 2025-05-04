@@ -1,6 +1,4 @@
 <x-MainLayout bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active">
-    <x-Navbar />
-
     {{--main content start--}}
     <main id="main-content">
         <div class="bg-overlay"></div>
