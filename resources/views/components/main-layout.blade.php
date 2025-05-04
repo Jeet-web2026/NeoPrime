@@ -89,6 +89,13 @@
             height: 5rem;
             width: auto;
         }
+
+        footer .latest-updates-img {
+            height: 3rem;
+            width: 3rem;
+            object-fit: cover;
+        }
+
         /* footer css */
     </style>
     {{--default css--}}

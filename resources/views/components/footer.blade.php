@@ -78,6 +78,40 @@
                 <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
                     <div class="card-body">
                         <p class="text-uppercase fw-semibold text-light">latest announcements</p>
+                        <div class="card border-0 bg-transparent" style="height: 8rem;">
+                            <div class="card-body">
+                                <marquee behavior="scroll" direction="up" style="height: 8rem;">
+                                    <div class="card mb-3 border-0 bg-transparent">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-md-3">
+                                                <img src="https://img.freepik.com/free-photo/programming-background-collage_23-2149901789.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="latest-updates-img rounded-circle" alt="web-development">
+                                            </div>
+                                            <div class="col-md-9 overflow-hidden">
+                                                <div class="card-body">
+                                                    <p class="card-title text-light text-truncate fw-semibold mb-1">Card title</p>
+                                                    <p class="card-text text-light text-truncate mb-0" style="width: 200px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <small class="text-capitalize text-light">04-05-2025</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 border-0 bg-transparent">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-md-3">
+                                                <img src="https://img.freepik.com/free-photo/programming-background-collage_23-2149901789.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="latest-updates-img rounded-circle" alt="web-development">
+                                            </div>
+                                            <div class="col-md-9 overflow-hidden">
+                                                <div class="card-body">
+                                                    <p class="card-title text-light text-truncate fw-semibold mb-1">Card title</p>
+                                                    <p class="card-text text-light text-truncate mb-0" style="width: 200px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <small class="text-capitalize text-light">04-05-2025</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </marquee>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
