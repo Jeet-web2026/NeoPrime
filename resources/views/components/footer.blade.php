@@ -81,6 +81,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12 mt-4">
+                <div class="d-flex justify-content-between align-items-center px-3">
+                    <div class="d-flex align-items-center">
+                        <a href="" class="text-decoration-none text-light text-capitalize">privacy policy</a>
+                        <p class="mb-0 text-light mx-2">|</p>
+                        <a href="" class="text-decoration-none text-light text-capitalize">terms & conditions</a>
+                    </div>
+                    <div>
+                        <button type="button" class="btn shadow border-0 text-light" style="background-color: #5404f5;"><i class="bi bi-arrow-up"></i></button>
+                    </div>
+                    <div>
+                        <p class="text-light text-capitalize mb-0">copyright @ 2025-2025 | NeoPrime</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
