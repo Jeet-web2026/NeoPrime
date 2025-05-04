@@ -14,7 +14,7 @@
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase fs-4 mb-0 fw-bold text-light text-center">admin login</h5>
-                                <a href="" class="stretched-link"></a>
+                                <a href="{{ route('admin-login') }}" class="stretched-link"></a>
                             </div>
                         </div>
                     </div>
