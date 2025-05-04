@@ -25,8 +25,39 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-10 bg-primary bg-opacity-25">
-
+            <div class="col-md-10 bg-primary bg-opacity-25 position-relative">
+                <nav class="navbar navbar-expand-lg position-absolute w-100 top-0" style="background-color: #000046;">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-capitalize text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-bell"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown mx-3">
+                                    <a class="nav-link text-capitalize text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        profile<i class="bi bi-plus ms-1"></i>
+                                    </a>
+                                    <ul class="dropdown-menu rounded-0 mt-2 shadow-sm border-0">
+                                        <li><a class="dropdown-item text-capitalize" href="#">manage profile</a></li>
+                                        <li><a class="dropdown-item text-capitalize" href="{{ route('admin-logout') }}">logout</a></li>
+                                    </ul>
+                                </li>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2 shadow-none" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-success shadow-none" type="submit"><i class="bi bi-search"></i></button>
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </main>

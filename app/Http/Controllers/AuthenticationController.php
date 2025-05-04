@@ -16,7 +16,7 @@ class AuthenticationController extends Controller
 
     public function AdminVerify(AdminVerifyRequest $request)
     {
-        $getData = $request->validated();
+        $request->validated();
 
         $matchData = [
             'admin_email' => $request->input('admin-email'),
@@ -28,5 +28,12 @@ class AuthenticationController extends Controller
         } else {
             return redirect()->back()->with('error', 'Invalid credentials');
         }
+    }
+
+    public function AdminLogout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        return redirect()->route('home')->with('success', 'Logged out successfully');
     }
 }
