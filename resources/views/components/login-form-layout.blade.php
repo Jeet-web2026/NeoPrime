@@ -4,18 +4,29 @@
         @if($login == 'admin' || $login == 'partner')
         <div class="card shadow border-0 w-50 p-2" style="height: 60%;">
             <div class="card-body">
-                <h2 class="text-uppercase fs-4 text-black fw-bold text-center mb-3">{{ $login }} login</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="{{ $login }}-email" class="form-label text-black text-capitalize fw-semibold fs-5">Email address</label>
-                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
+                <div class="card mb-3 border-0 bg-transparent mt-3">
+                    <div class="row g-0 w-100 align-items-center">
+                        <div class="col-md-4 pe-2">
+                            <img src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-3864.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="{{ $login }}-image" style="height: 14rem; width: auto;">
+                            <h2 class="text-center fs-3 text-black text-uppercase mt-2">{{ $login }}</h2>
+                        </div>
+                        <div class="col-md-8 ps-2">
+                            <div class="card-body pe-0">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="{{ $login }}-email" class="form-label text-black text-capitalize fw-semibold fs-5">Email address</label>
+                                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="{{ $login }}-password" class="form-label text-black text-capitalize fw-semibold fs-5">Password</label>
+                                        <input type="password" class="form-control shadow-none text-black" id="{{ $login }}-password" name="{{ $login }}-password">
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-success shadow-none mt-4 w-100">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="{{ $login }}-password" class="form-label text-black text-capitalize fw-semibold fs-5">Password</label>
-                        <input type="password" class="form-control shadow-none text-black" id="{{ $login }}-password" name="{{ $login }}-password">
-                    </div>
-                    <button type="submit" class="btn btn-outline-success shadow-none mt-4 w-100">Submit</button>
-                </form>
+                </div>
             </div>
         </div>
         @elseif($login == 'client')
