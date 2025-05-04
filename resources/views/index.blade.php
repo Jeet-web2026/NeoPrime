@@ -287,8 +287,8 @@
         <div class="container-fluid p-4">
             <div class="card border-0 bg-transparent">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row align-items-center px-3">
+                        <div class="col-md-6 pe-2">
                             <div class="d-flex justify-content-start">
                                 <h5 class="text-capitalize fw-bold fs-5 text-primary py-2 px-3 shadow rounded-pill">our team</h5>
                             </div>
@@ -305,11 +305,11 @@
                                         <div class="card-body px-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1">example</h5>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
                                                     <p class="text-capitalize text-secondary">web developer</p>
                                                 </div>
                                                 <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-arrow-up-right"></i></a>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -321,11 +321,11 @@
                                         <div class="card-body px-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1">example</h5>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
                                                     <p class="text-capitalize text-secondary">web developer</p>
                                                 </div>
                                                 <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-arrow-up-right"></i></a>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -333,13 +333,129 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6"></div>
+                        <div class="col-md-6 ps-2">
+                            <div class="row">
+                                <div class="col-md-6 pe-2">
+                                    <div class="card border-0 bg-transparent">
+                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <div class="card-body px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
+                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ps-2">
+                                    <div class="card border-0 bg-transparent">
+                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <div class="card-body px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
+                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pe-2">
+                                    <div class="card border-0 bg-transparent">
+                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <div class="card-body px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
+                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card border-0 bg-transparent h-100">
+                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                            <a href="javascript:void(0)" class="btn shadow-none text-light border-0 text-capitalize" style="background-color: #5404f5;">view more members</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     {{--show team members--}}
+
+    {{--our blogs--}}
+    <section id="our-blogs">
+        <div class="container-fluid pb-5 px-5">
+            <div class="d-flex justify-content-center align-items-center">
+                <h5 class="fs-5 text-capitalize shadow rounded-pill px-4 py-2 text-primary fw-bold">our latest blogs</h5>
+            </div>
+            <h2 class="text-capitalize text-black fs-2 text-center mt-2">explore our latest blogs and events</h2>
+            <div class="row mt-5 blogs">
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="..." class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="..." class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="..." class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="..." class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="..." class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{--our blogs--}}
 
     <x-HomePopups />
     @section('extracss')
@@ -485,9 +601,18 @@
         #team-members img {
             height: 12rem;
             width: 100%;
+            object-fit: cover;
+            object-position: top;
         }
 
         /* team-members end */
+
+        /* our-blogs start */
+        #our-blogs {
+            background-color: #f7f7f7;
+        }
+
+        /* our-blogs end */
     </style>
     @endsection
 
@@ -507,6 +632,37 @@
                         breakpoint: 1024,
                         settings: {
                             slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            $('.blogs').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 4,
                             slidesToScroll: 1,
                             infinite: true,
                             dots: true
