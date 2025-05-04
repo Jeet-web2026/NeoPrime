@@ -123,7 +123,7 @@
                         <a href="" class="text-decoration-none text-light text-capitalize">terms & conditions</a>
                     </div>
                     <div>
-                        <button type="button" class="btn shadow border-0 text-light" style="background-color: #5404f5;"><i class="bi bi-arrow-up"></i></button>
+                        <button type="button" class="btn shadow border-0 text-light scroll-top-direction" style="background-color: #5404f5;"><i class="bi bi-arrow-up"></i></button>
                     </div>
                     <div>
                         <p class="text-light text-capitalize mb-0">copyright @ 2025-2025 | NeoPrime</p>
