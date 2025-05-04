@@ -94,7 +94,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 mt-2">
+                                            <div class="col-md-4 mt-2 pe-2">
                                                 <div class="card bg-transparent shadow-sm">
                                                     <div class="card-body">
                                                         <img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['January','February','March','April','May'],datasets:[{data:[50,60,70,180,190]}]}}" class="chart-img" alt="chart">
@@ -102,7 +102,25 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6"></div>
+                                            <div class="col-md-8 mt-2 ps-2">
+                                                <div class="card bg-transparent shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="text-capitalize text-black fs-5 mb-3">current updates</h5>
+                                                        <marquee behavior="scroll" direction="up" onmouseenter="this.stop()" onmouseleave="this.start()" style="height: 12.3rem;">
+                                                            <ul class="list-group">
+                                                                <li class="list-group-item">An item</li>
+                                                                <li class="list-group-item">A second item</li>
+                                                                <li class="list-group-item">A third item</li>
+                                                                <li class="list-group-item">A fourth item</li>
+                                                                <li class="list-group-item">And a fifth one</li>
+                                                                <li class="list-group-item">A third item</li>
+                                                                <li class="list-group-item">A fourth item</li>
+                                                                <li class="list-group-item">And a fifth one</li>
+                                                            </ul>
+                                                        </marquee>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
