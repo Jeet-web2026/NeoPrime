@@ -1,4 +1,4 @@
-<x-SecondLayout subheading="Admin" bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active">
+<x-SecondLayout subheading="Admin Dashboard" bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active">
     <main id="admin-dashboard">
         <div class="row h-100">
             <div class="col-md-2">
@@ -65,13 +65,13 @@
                 </nav>
                 <div class="card border-0 pt-5 bg-transparent overflow-auto" style="height: 100vh;">
                     <div class="card-body">
-                        <div class="card border-0 shadow h-100 mt-1 admin-components">
-                            <div class="card-body">
+                        <div class="card border-0 shadow h-100 mt-1">
+                            <div class="card-body admin-components">
                                 <div class="card border-0 bg-transparent">
                                     <div class="card-body p-0">
                                         <div class="row">
                                             <div class="col-md-4 pe-2">
-                                                <div class="card shadow-sm">
+                                                <div class="card shadow border-0">
                                                     <div class="card-body">
                                                         <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
                                                         <p class="text-uppercase mb-0 text-center text-black">pending projects</p>
@@ -79,7 +79,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-2">
-                                                <div class="card shadow-sm">
+                                                <div class="card shadow border-0">
                                                     <div class="card-body">
                                                         <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
                                                         <p class="text-uppercase mb-0 text-center text-black">new callback request</p>
@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 ps-2">
-                                                <div class="card shadow-sm">
+                                                <div class="card shadow border-0">
                                                     <div class="card-body">
                                                         <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
                                                         <p class="text-uppercase mb-0 text-center text-black">ongoing projects</p>
@@ -95,7 +95,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mt-2 pe-2">
-                                                <div class="card bg-transparent shadow-sm">
+                                                <div class="card bg-transparent shadow border-0">
                                                     <div class="card-body">
                                                         <img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['January','February','March','April','May'],datasets:[{data:[50,60,70,180,190]}]}}" class="chart-img" alt="chart">
                                                         <h3 class="fs-5 text-center text-capitalize mt-2">last 5 months data</h3>
@@ -103,7 +103,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8 mt-2 ps-2">
-                                                <div class="card bg-transparent shadow-sm">
+                                                <div class="card bg-transparent shadow border-0">
                                                     <div class="card-body">
                                                         <h5 class="text-capitalize text-black fs-5 mb-3">current updates</h5>
                                                         <marquee behavior="scroll" direction="up" onmouseenter="this.stop()" onmouseleave="this.start()" style="height: 12.3rem;">
@@ -122,7 +122,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mt-2">
-                                                <div class="card bg-transparnt shadow-sm">
+                                                <div class="card bg-transparnt shadow border-0">
                                                     <div class="card-body px-5">
                                                         <h5 class="text-capitalize fs-5 text-center mb-3">today's plan</h5>
                                                         <div class="row plan">

@@ -41,15 +41,14 @@
             ]
         });
 
-        $(this).find('.admin-components .card').eq(0).siblings().hide();
+        $('.admin-components .card').eq(0).siblings().addClass('d-none');
 
         function navgationSetup(NavgationNo) {
-            $(document).find('.admin-side-navigation li').eq(NavgationNo).on('click', function() {
-                $(document).find('.admin-components .card').eq(NavgationNo).show().siblings().hide();
+            $('.admin-side-navigation li').eq(NavgationNo).on('click', function() {
+                $('.admin-components .card').eq(NavgationNo).addClass('bg-dark');
+                console.log(NavgationNo);
             });
         }
-
         navgationSetup(0);
-        navgationSetup(1);
     });
 </script>
