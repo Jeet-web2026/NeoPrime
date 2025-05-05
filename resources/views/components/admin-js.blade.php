@@ -45,10 +45,10 @@
 
         function navgationSetup(NavgationNo) {
             $('.admin-side-navigation li').eq(NavgationNo).on('click', function() {
-                $('.admin-components .card').eq(NavgationNo).addClass('bg-dark');
-                console.log(NavgationNo);
+                $('.admin-components .component').eq(NavgationNo).addClass('d-block').removeClass('d-none').siblings().addClass('d-none').removeClass('d-block');
             });
         }
         navgationSetup(0);
+        navgationSetup(1);
     });
 </script>

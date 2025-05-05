@@ -67,7 +67,7 @@
                     <div class="card-body">
                         <div class="card border-0 shadow h-100 mt-1">
                             <div class="card-body admin-components">
-                                <div class="card border-0 bg-transparent">
+                                <div class="card border-0 bg-transparent component">
                                     <div class="card-body p-0">
                                         <div class="row">
                                             <div class="col-md-4 pe-2">
@@ -175,7 +175,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card border-0 bg-transparent component">
                                     hello
                                 </div>
                             </div>
