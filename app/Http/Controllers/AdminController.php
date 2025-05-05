@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LandingContent;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -24,7 +25,23 @@ class AdminController extends Controller
         ]);
 
         $matchData = [
-            ''
+            'main_heading' => $getData['landing-main-heading'],
+            'meta_content' => $getData['landing-meta-content'],
+            'meta_description' => $getData['landing-meta-description']
         ];
+
+        $success = LandingContent::create($matchData);
+
+        if ($success) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Landing content added successfully'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Failed to add landing content'
+            ]);
+        }
     }
 }

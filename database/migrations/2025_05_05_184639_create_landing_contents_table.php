@@ -10,8 +10,11 @@ return new class extends Migration
     {
         Schema::create('landing_contents', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('created_at')->useUpdate();
-            $table->timestamp('updated_at')->useUpdate()->useCurrent();
+            $table->text('main_heading')->nullable();
+            $table->text('meta_content')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
