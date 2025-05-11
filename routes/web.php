@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('callback-request', [HomeController::class, 'callbackRequest'])->name('callback-request');
 
 Route::controller(AuthenticationController::class)->group(function () {
     Route::redirect('login', 'home')->name('login');

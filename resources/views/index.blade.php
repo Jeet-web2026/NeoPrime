@@ -35,7 +35,9 @@
                         <div class="card contact-form mt-5 shadow bg-white w-75">
                             <div class="card-body">
                                 <h3 class="text-capitalize fs-4 fw-bold text-black">get callback</h3>
-                                <form>
+                                <form id="callback-request-form">
+                                    @csrf
+                                    <div class="callback-request-form-result"></div>
                                     <div class="mb-3">
                                         <input type="password" placeholder="Full Name" class="form-control shadow-none" id="connection-name" name="connection-name">
                                     </div>
@@ -43,7 +45,7 @@
                                         <input type="email" placeholder="Email Adress" class="form-control shadow-none" id="connection-email" name="connection-email">
                                     </div>
                                     <div class="mb-3">
-                                        <select class="form-select shadow-none">
+                                        <select class="form-select shadow-none" name="connection-project-type" id="connection-project-type">
                                             <option value="0">Choose Tour Project Type</option>
                                             <option value="Learning Management System">Learning Management System</option>
                                             <option value="Custom ERP software">Custom ERP software</option>
@@ -715,6 +717,24 @@
                         }
                     }
                 ]
+            });
+            $(document).on('submit', '#callback-request-form', function(e) {
+                e.preventDefault();
+                $.post({
+                    url: "{{ route('callback-request') }}",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $(document).find('.callback-request-form-result').html(`
+                            <div class="alert alert-success" role="alert">
+                                 ${response.message}
+                            </div>                        
+                        `);
+                        $(document).find('#callback-request-form')[0].reset();
+                        setTimeout(() => {
+                            $(document).find('.alert').remove();
+                        }, 3000);
+                    }
+                });
             });
         });
     </script>
