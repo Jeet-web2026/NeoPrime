@@ -64,4 +64,17 @@ class AdminController extends Controller
             'data' => $FetchRequests
         ]);
     }
+
+    public function WeOfferAdd(Request $request) 
+    {
+        $getData = $request->validate([
+            'service-name' => 'required|string',
+            'service-related-image' => 'required|url',
+        ],[
+            'service-name.required' => 'Service name is required',
+            'service-name.string' => 'Service name must be a string',
+            'service-related-image.required' => 'Service image is required',
+            'service-related-image.url' => 'Service image must be a valid URL',
+        ]);
+    }
 }

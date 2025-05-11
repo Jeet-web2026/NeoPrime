@@ -1,6 +1,8 @@
 <div class="card border-0">
     <div class="card-body px-0">
         <form id="what-we-offer">
+            @csrf
+            <div class="what-we-offer-result"></div>
             <div class="mb-3">
                 <label for="service-name" class="form-label text-black text-capitalize">Service Name</label>
                 <input type="text" class="form-control shadow-none text-black" id="service-name" name="service-name">

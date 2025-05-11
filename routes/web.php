@@ -22,6 +22,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('admin-dashboard/landing-content', 'GetLandingcontent')->name('get-admin-landing-content');
         Route::post('admin-dashboard/landing-content-add', 'AddLandingContent')->name('landing-page-content-add');
         Route::get('admin-dashboard/callback-requests', 'Callbackrequests')->name('callback-requests');
+        Route::post('admin-dashboard/we-offer-add', 'WeOfferAdd')->name('we-offer-add');
     });
 });
 

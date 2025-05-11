@@ -43,6 +43,12 @@
 
         $('.admin-components .card').eq(0).siblings().addClass('d-none');
 
+        function PopupDelete(IdClass, Timing) {
+            setTimeout(() => {
+                $(document).find(IdClass + ' .alert').remove();
+            }, Timing);
+        }
+
         function navgationSetup(NavgationNo) {
             $('.admin-side-navigation li').eq(NavgationNo).on('click', function() {
                 $('.admin-components .component').eq(NavgationNo).addClass('d-block').removeClass('d-none').siblings().addClass('d-none').removeClass('d-block');
@@ -65,6 +71,7 @@
                             </div>
                         `);
                         GetLandingContentData();
+                        PopupDelete('.landing-content-form-result', 2500);
                     } else {
                         $(document).find('.landing-content-form-result').html(`
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -72,10 +79,9 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         `);
+                        PopupDelete('.landing-content-form-result', 2500);
                     }
-                    setTimeout(() => {
-                        $(document).find('.landing-content-form-result').find('.alert').remove();
-                    }, 2500);
+
                 },
                 error: function(xhr, status, error) {
                     $(document).find('.landing-content-form-result').html(`
@@ -84,9 +90,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     `);
-                    setTimeout(() => {
-                        $(document).find('.landing-content-form-result').find('.alert').remove();
-                    }, 2500);
+                    PopupDelete('.landing-content-form-result', 2500);
                 }
             });
         });
@@ -137,6 +141,13 @@
 
         $(document).on('submit', '#what-we-offer', function(e) {
             e.preventDefault();
+            $.post({
+                url: "",
+                data: $(this).serialize(),
+                success: function(response) {
+
+                }
+            });
         });
     });
 </script>
