@@ -39,7 +39,7 @@
                                     @csrf
                                     <div class="callback-request-form-result"></div>
                                     <div class="mb-3">
-                                        <input type="password" placeholder="Full Name" class="form-control shadow-none" id="connection-name" name="connection-name">
+                                        <input type="text" placeholder="Full Name" class="form-control shadow-none" id="connection-name" name="connection-name">
                                     </div>
                                     <div class="mb-3">
                                         <input type="email" placeholder="Email Adress" class="form-control shadow-none" id="connection-email" name="connection-email">
