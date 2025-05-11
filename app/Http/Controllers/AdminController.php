@@ -30,7 +30,7 @@ class AdminController extends Controller
             'meta_description' => $getData['landing-meta-description']
         ];
 
-        $success = LandingContent::create($matchData);
+        $success = LandingContent::where('id', 7)->update($matchData);
 
         if ($success) {
             return response()->json([
