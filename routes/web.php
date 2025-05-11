@@ -18,6 +18,7 @@ Route::controller(AuthenticationController::class)->group(function () {
 Route::middleware(['auth:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('admin-dashboard', 'Dashboard')->name('admin-dashboard');
+        Route::get('admin-dashboard/landing-content', 'GetLandingcontent')->name('get-admin-landing-content');
         Route::post('admin-dashboard/landing-content-add', 'AddLandingContent')->name('landing-page-content-add');
     });
 });

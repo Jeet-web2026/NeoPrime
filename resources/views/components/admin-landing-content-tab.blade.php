@@ -8,6 +8,10 @@
                 <input type="text" class="form-control shadow-none text-black" id="landing-main-heading" name="landing-main-heading">
             </div>
             <div class="mb-3">
+                <label for="landing-main-background" class="form-label text-capitalize fs-5 text-black">main background</label>
+                <input type="text" class="form-control shadow-none text-black" id="landing-main-background" name="landing-main-background">
+            </div>
+            <div class="mb-3">
                 <label for="landing-meta-content" class="form-label text-capitalize fs-5 text-black">meta content</label>
                 <input type="text" class="form-control shadow-none text-black" id="landing-meta-content" name="landing-meta-content">
             </div>

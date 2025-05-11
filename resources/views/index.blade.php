@@ -1,13 +1,13 @@
 <x-MainLayout bootstrap="active" bIcons="active" jQuery="active" slickcarousel="active" font2nd="active">
     {{--main content start--}}
-    <main id="main-content">
+    <main id="main-content" style="background-image: url('{{ $FetchLandingContent->landing_background }}');">
         <div class="bg-overlay"></div>
         <div class="row h-100 w-100">
             <div class="col-md-6">
                 <div class="card h-100 w-100 border-0 px-5 bg-transparent">
                     <div class="card-body d-flex justify-content-center align-items-center">
                         <div class="mt-5">
-                            <h1 class="text-capitalize fw-bold text-light lh-sm">we take care of your IT solutions & provide best services</h1>
+                            <h1 class="text-capitalize fw-bold text-light lh-sm">{{ $FetchLandingContent->main_heading }}</h1>
                             <div class="d-flex justify-content-start align-items-center mt-4">
                                 <a href="javascript:void(0)" class="btn shadow-sm border-0 text-light text-capitalize contact-now px-4 py-2 me-3">get contact now<i class="bi bi-phone-flip ms-2"></i></a>
                                 <a href="javascript:void(0)" class="text-capitalize text-decoration-none view-services btn btn-outline-light rounded px-4 py-2">view services<i class="bi bi-box-arrow-in-up-right ms-2"></i></a>
@@ -462,7 +462,6 @@
         #main-content {
             height: 100vh;
             width: 100%;
-            background-image: url('https://img.freepik.com/free-photo/group-people-working-team_23-2147656716.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740');
             background-repeat: no-repeat;
             background-size: 100%;
             position: relative;

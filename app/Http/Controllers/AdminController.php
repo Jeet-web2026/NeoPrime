@@ -12,22 +12,32 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
+    public function GetLandingcontent()
+    {
+        $FetchLandingContent = LandingContent::where('id', 7)->first();
+        return response()->json([
+            'status' => 200,
+            'data' => $FetchLandingContent
+        ]);
+    }
+
     public function AddLandingContent(Request $request)
     {
         $getData = $request->validate([
-            'landing-main-heading' => 'required|string',
-            'landing-meta-content' => 'required',
-            'landing-meta-description' => 'required'
+            'landing-main-heading' => 'nullable|string',
+            'landing-meta-content' => 'nullable',
+            'landing-meta-description' => 'nullable',
+            'landing-main-background' => 'nullable|url',
         ], [
-            'landing-main-heading.required' => 'Main heading is required',
-            'landing-meta-content.required' => 'Meta content is required',
-            'landing-meta-description.required' => 'Meta description is required'
+            'landing-main-heading.string' => 'Main heading must be a string',
+            'landing-main-background.url' => 'Main background must be a valid URL',
         ]);
 
         $matchData = [
             'main_heading' => $getData['landing-main-heading'],
             'meta_content' => $getData['landing-meta-content'],
-            'meta_description' => $getData['landing-meta-description']
+            'meta_description' => $getData['landing-meta-description'],
+            'landing_background' => $getData['landing-main-background'],
         ];
 
         $success = LandingContent::where('id', 7)->update($matchData);
@@ -35,12 +45,12 @@ class AdminController extends Controller
         if ($success) {
             return response()->json([
                 'status' => 200,
-                'message' => 'Landing content added successfully'
+                'message' => 'Landing content updated successfully'
             ]);
         } else {
             return response()->json([
                 'status' => 500,
-                'message' => 'Failed to add landing content'
+                'message' => 'Failed to update landing content'
             ]);
         }
     }

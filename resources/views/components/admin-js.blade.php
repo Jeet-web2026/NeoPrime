@@ -57,12 +57,21 @@
                 url: "{{ route('landing-page-content-add') }}",
                 data: $(this).serialize(),
                 success: function(response) {
-                    $(document).find('.landing-content-form-result').html(`
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>${response.message}</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    `);
+                    if (response.status == 200) {
+                        $(document).find('.landing-content-form-result').html(`
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>${response.message}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `);
+                    }else{
+                        $(document).find('.landing-content-form-result').html(`
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>${response.message}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `);
+                    }
                     setTimeout(() => {
                         $(document).find('.landing-content-form-result').find('.alert').remove();
                     }, 2500);
@@ -80,5 +89,22 @@
                 }
             });
         });
+
+        function GetLandingContentData() {
+            $.get({
+                url: "{{ route('get-admin-landing-content') }}",
+                success: function(response) {
+                    $(document).find('#landing-content-form #landing-main-heading').val(response.data.main_heading);
+                    $(document).find('#landing-content-form #landing-main-background').val(response.data.landing_background);
+                    $(document).find('#landing-content-form #landing-meta-content').val(response.data.meta_content);
+                    $(document).find('#landing-content-form #landing-meta-description').val(response.data.meta_description);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseJSON.message);
+                }
+            });
+        }
+
+        GetLandingContentData();
     });
 </script>

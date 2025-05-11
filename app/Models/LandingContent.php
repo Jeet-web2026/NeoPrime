@@ -11,6 +11,7 @@ class LandingContent extends Model
     protected $fillable = [
         'main_heading',
         'meta_content',
-        'meta_description'
+        'meta_description',
+        'landing_background'
     ];
 }
