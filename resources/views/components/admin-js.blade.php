@@ -100,7 +100,9 @@
                     $(document).find('#landing-content-form #landing-meta-description').val(response.data.meta_description);
                 },
                 error: function(xhr, status, error) {
-                    console.error(xhr.responseJSON.message);
+                    $(document).find('.landing-content-form-result').html(`
+                        <p class="text-capitalize text-black fs-5">No data found!</p>                    
+                    `);
                 }
             });
         }
