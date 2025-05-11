@@ -57,7 +57,15 @@
                 url: "{{ route('landing-page-content-add') }}",
                 data: $(this).serialize(),
                 success: function(response) {
-                    console.log(response)
+                    $(document).find('.landing-content-form-result').html(`
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>${response.message}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    `);
+                    setTimeout(() => {
+                        $(document).find('.landing-content-form-result').find('.alert').remove();
+                    }, 2500);
                 },
                 error: function(xhr, status, error) {
                     $(document).find('.landing-content-form-result').html(`

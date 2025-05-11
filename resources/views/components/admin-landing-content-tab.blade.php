@@ -3,7 +3,7 @@
         <div class="landing-content-form-result"></div>
         <form id="landing-content-form">
             @csrf
-            <div class=" mb-3">
+            <div class="mb-3">
                 <label for="landing-main-heading" class="form-label text-capitalize fs-5 text-black">main heading</label>
                 <input type="text" class="form-control shadow-none text-black" id="landing-main-heading" name="landing-main-heading">
             </div>
