@@ -2,11 +2,11 @@
 <x-SecondLayout bootstrap="active" subheading="{{ $loginsubheading }}">
     <main @if($login) id="{{ $login }}-login" @endif class="container-fluid d-flex justify-content-center align-items-center">
         @if($login == 'admin' || $login == 'partner')
-        <div class="card shadow border-0 w-50 p-2" style="height: 60%;">
+        <div class="card shadow border-0 w-50 p-2">
             <div class="card-body">
-                @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
                     <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
