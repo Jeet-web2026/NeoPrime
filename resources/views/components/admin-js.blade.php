@@ -109,5 +109,30 @@
         }
 
         GetLandingContentData();
+
+        function GetCalbackRequestData() {
+            $.get({
+                url: "{{ route('callback-requests') }}",
+                success: function(response) {
+                    $(document).find('.callback-request-table tbody').empty();
+                    if (response.status == 200) {
+                        $.each(response.data, function(index, value) {
+                            $(document).find('.callback-request-table tbody').append(`
+                                <tr>
+                                    <th scope="row" class="text-black text-capitalize">${index + 1}</th>
+                                    <td class="text-black text-capitalize">${value.name}</td>
+                                    <td class="text-black text-capitalize">${value.project_type}</td>
+                                    <td class="text-black text-capitalize">
+                                        <a href="mailto:${value.email}" class="btn btn-outline-primary shadow-none"><i class="bi bi-envelope-at"></i></a>
+                                    </td>
+                                </tr>                    
+                            `);
+                        });
+                    }
+                }
+            });
+        }
+
+        GetCalbackRequestData();
     });
 </script>

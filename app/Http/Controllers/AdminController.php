@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use Illuminate\Http\Request;
 
@@ -53,5 +54,14 @@ class AdminController extends Controller
                 'message' => 'Failed to update landing content'
             ]);
         }
+    }
+
+    public function Callbackrequests()
+    {
+        $FetchRequests = CallbackRequest::orderBy('id', 'desc')->get();
+        return response()->json([
+            'status' => 200,
+            'data' => $FetchRequests
+        ]);
     }
 }
