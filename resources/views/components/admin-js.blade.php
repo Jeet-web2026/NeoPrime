@@ -134,5 +134,9 @@
         }
 
         GetCalbackRequestData();
+
+        $(document).on('submit', '#what-we-offer', function(e) {
+            e.preventDefault();
+        });
     });
 </script>
