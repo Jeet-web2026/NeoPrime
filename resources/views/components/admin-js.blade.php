@@ -64,7 +64,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         `);
-                    }else{
+                        GetLandingContentData();
+                    } else {
                         $(document).find('.landing-content-form-result').html(`
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 <strong>${response.message}</strong>
