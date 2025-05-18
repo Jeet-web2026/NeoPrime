@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->text('service_name')->nullable();
             $table->text('service_img_url')->nullable();
+            $table->text('service_description')->nullable();
             $table->timestamps();
         });
     }

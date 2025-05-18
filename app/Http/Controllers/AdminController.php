@@ -71,16 +71,20 @@ class AdminController extends Controller
         $getData = $request->validate([
             'service-name' => 'required|string',
             'service-related-image' => 'required|url',
+            'service-description' => 'required|min:10'
         ], [
             'service-name.required' => 'Service name is required',
             'service-name.string' => 'Service name must be a string',
             'service-related-image.required' => 'Service image is required',
             'service-related-image.url' => 'Service image must be a valid URL',
+            'service-description.required' => 'Description is required',
+            'service-description.min' => 'Description must be 10 characters long!'
         ]);
 
         $matchData = [
             'service_name' => $getData['service-name'],
-            'service_img_url' => $getData['service-related-image']
+            'service_img_url' => $getData['service-related-image'],
+            'service_description' => $getData['service-description']
         ];
         try {
             LandingWhatWeoffer::Create(

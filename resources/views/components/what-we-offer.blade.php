@@ -11,6 +11,10 @@
                 <label for="service-related-image" class="form-label text-black text-capitalize">Service Related Image</label>
                 <input type="text" class="form-control shadow-none text-black" id="service-related-image" name="service-related-image">
             </div>
+            <div class="mb-3">
+                <label for="service-description" class="form-label text-black text-capitalize">Service Description</label>
+                <textarea name="service-description" id="service-description" class="form-control shadow-none text-black" style="height: 150px;"></textarea>
+            </div>
             <button type="submit" class="btn btn-success border-0 shadow-none">Submit</button>
         </form>
     </div>

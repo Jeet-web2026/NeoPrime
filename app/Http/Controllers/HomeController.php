@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $FetchLandingContent = LandingContent::where('id', 7)->first();
-        $FetchWhatweoffer = LandingWhatWeoffer::orderBy('created_at', 'desc')->get();
+        $FetchWhatweoffer = LandingWhatWeoffer::all();
         return view('index', compact('FetchLandingContent', 'FetchWhatweoffer'));
     }
 

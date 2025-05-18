@@ -141,7 +141,7 @@
 
         $(document).on('submit', '#what-we-offer', function(e) {
             e.preventDefault();
-
+            const $form = $(this);
             $.post({
                 url: "{{ route('we-offer-add') }}",
                 data: $(this).serialize(),
@@ -153,6 +153,7 @@
                     `);
                     setTimeout(() => {
                         $('.what-we-offer-result').find('.alert').remove();
+                        $form[0].reset();
                     }, 2500);
                 },
                 error: function(xhr) {

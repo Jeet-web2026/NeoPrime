@@ -76,9 +76,9 @@
                             <div class="row g-0">
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <p class="card-text mb-1">{{ $loop->iteration }}</p>
+                                        <p class="card-text mb-1">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</p>
                                         <h5 class="card-title fs-5 text-capitalize text-black fw-bold">{{ $offer->service_name }}</h5>
-                                        <a href="javascript:void(0)" class="text-black text-decoration-none mb-0"><i class="bi bi-arrow-up-right fs-5"></i></a>
+                                        <a href="{{ route('offer-full-details', $offer->id) }}" class="text-black text-decoration-none mb-0"><i class="bi bi-arrow-up-right fs-5"></i></a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

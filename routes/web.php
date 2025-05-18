@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WhatweofferController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +25,10 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('admin-dashboard/callback-requests', 'Callbackrequests')->name('callback-requests');
         Route::post('admin-dashboard/we-offer-add', 'WeOfferAdd')->name('we-offer-add');
     });
+});
+
+Route::controller(WhatweofferController::class)->group(function () {
+    Route::get('what-we-offer/product={id}', 'OfferedFullDetails')->name('offer-full-details');
 });
 
 Route::fallback(function () {
