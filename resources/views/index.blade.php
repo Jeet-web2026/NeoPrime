@@ -521,6 +521,38 @@
             object-fit: cover;
         }
 
+        #populer-services .popular-services .slick-prev {
+            border: 1px solid #5404f5;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            left: -1%;
+        }
+
+        #populer-services .popular-services .slick-prev:before {
+            font-family: normal;
+            font-size: 21px;
+            line-height: .6;
+            color: #5404f5;
+            content: '←';
+        }
+
+        #populer-services .popular-services .slick-next {
+            border: 1px solid #5404f5;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            right: -1%;
+        }
+
+        #populer-services .popular-services .slick-next:before {
+            font-family: normal;
+            font-size: 21px;
+            line-height: .6;
+            color: #5404f5;
+            content: '→';
+        }
+
         /* populer-services end */
 
         /* youtube-videos start */
