@@ -2,6 +2,7 @@
     <div class="card-body">
         <div class="about-us-add-result"></div>
         <form id="about-us-content">
+            @csrf
             <div class="mb-3">
                 <label for="about-heading" class="form-label text-black text-capitalize">Heading</label>
                 <input type="text" class="form-control shadow-none text-black" id="about-heading" name="about-heading">

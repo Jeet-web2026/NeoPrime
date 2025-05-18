@@ -135,6 +135,8 @@ class AdminController extends Controller
         $matchData = [
             'about_heading' => $getData['about-heading'],
             'about_description' => $getData['about-description'],
+            'about_first_img' => $getData['about-first-img'],
+            'about_second_img' => $getData['about-second-image'],
             'about_first_point' => $getData['about-first-point'],
             'about_second_point' => $getData['about-second-point'],
             'about_third_point' => $getData['about-third-point']

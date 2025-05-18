@@ -11,6 +11,8 @@ class AboutUs extends Model
     protected $fillable = [
         'about_heading',
         'about_description',
+        'about_first_img',
+        'about_second_img',
         'about_first_point',
         'about_second_point',
         'about_third_point'
