@@ -221,5 +221,46 @@
             });
         });
 
+        $(this).on('submit', '#our-services-add', function(e) {
+            e.preventDefault();
+            const $form = $(this);
+            $.post({
+                url: "{{ route('our-services-add') }}",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $(document).find('.result-our-services').html(`
+                    <div class="alert alert-success" role="alert">
+                        ${response.message}
+                    </div>
+                    `);
+                    setTimeout(() => {
+                        $(document).find('.result-our-services .alert-success').remove();
+                         $form[0].reset();
+                    }, 2500);
+                },
+                error: function(xhr) {
+                    let errorMessage = 'Something went wrong!';
+
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+
+                    if (xhr.status === 422 && xhr.responseJSON.errors) {
+                        const errors = Object.values(xhr.responseJSON.errors).flat();
+                        errorMessage = errors.join('<br>');
+                    }
+
+                    $(document).find('.result-our-services').html(`
+                        <div class="alert alert-danger text-capitalize" role="alert">
+                            ${errorMessage}
+                        </div>                    
+                    `);
+                    setTimeout(() => {
+                        $(document).find('.result-our-services').find('.alert-danger').remove();
+                    }, 3000);
+                }
+            });
+        });
+
     });
 </script>

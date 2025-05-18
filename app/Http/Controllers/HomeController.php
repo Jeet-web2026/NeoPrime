@@ -6,6 +6,7 @@ use App\Models\AboutUs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
+use App\Models\OurServices;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class HomeController extends Controller
         $FetchAboutUsContent = AboutUs::where('id', 3)->first();
         $description = explode(' ', strip_tags($FetchAboutUsContent->about_description));
         $Part = implode(' ', array_slice($description, 0, 30));
-        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part'));
+        $FetchPopularServices = OurServices::all();
+        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part', 'FetchPopularServices'));
     }
 
     public function callbackRequest(Request $request)

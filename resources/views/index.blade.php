@@ -166,19 +166,23 @@
         </div>
         <h2 class="text-capitalize fs-1 text-black font-500 text-center my-2">we provide best quality service <br>for your business</h2>
         <div class="px-5">
-            <div class="row p-5">
-                <div class="col-md-3 p-2">
+            <div class="row p-5 popular-services">
+                @forelse($FetchPopularServices as $service)
+                <div class="col p-2">
                     <div class="card border-0 shadow-sm secondary-card p-2">
                         <div class="card-body">
-                            <i class="bi bi-aspect-ratio fs-2"></i>
-                            <h4 class="text-capitalize text-black fs-3 mb-3 mt-2">website design & development</h4>
+                            <p class="icon mb-0">
+                                {!! $service->icon !!}
+                            </p>
+                            <h4 class="text-capitalize text-black fs-3 mb-3 mt-2">{{ $service->name }}</h4>
                             <div class="d-flex justify-content-center align-items-center">
-                                <img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-site-design" class="my-3">
+                                <img src="{{ $service->image }}" alt="web-site-design" class="my-3">
                             </div>
                             <a href="javascript:void(0)" class="btn border-0 shadow-none text-black text-capitalize mt-3" style="font-size: 1rem;">read more<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
+                @empty
                 <div class="col-md-3 p-2">
                     <div class="card border-0 shadow-sm main-card p-2">
                         <div class="card-body">
@@ -191,30 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 p-2">
-                    <div class="card border-0 shadow-sm secondary-card p-2">
-                        <div class="card-body">
-                            <i class="bi bi-diagram-3 fs-2"></i>
-                            <h4 class="text-capitalize text-black fs-3 mb-3 mt-2">IT management & planning</h4>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595847.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-site-design" class="my-3">
-                            </div>
-                            <a href="javascript:void(0)" class="btn border-0 shadow-none text-black text-capitalize mt-3" style="font-size: 1rem;">read more<i class="bi bi-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-2">
-                    <div class="card border-0 shadow-sm secondary-card p-2">
-                        <div class="card-body">
-                            <i class="bi bi-view-list fs-2"></i>
-                            <h4 class="text-capitalize text-black fs-3 mb-3 mt-2">design product UX/UI design</h4>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="web-site-design" class="my-3">
-                            </div>
-                            <a href="javascript:void(0)" class="btn border-0 shadow-none text-black text-capitalize mt-3" style="font-size: 1rem;">read more<i class="bi bi-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -681,6 +662,37 @@
                     }
                 ]
             });
+            $('.popular-services').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
             $(document).on('submit', '#callback-request-form', function(e) {
                 e.preventDefault();
                 $.post({
@@ -699,6 +711,7 @@
                     }
                 });
             });
+            $(this).find('.popular-services .icon').addClass('fs-2');
         });
     </script>
     @endsection

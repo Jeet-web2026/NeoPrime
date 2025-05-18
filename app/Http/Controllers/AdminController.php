@@ -6,6 +6,7 @@ use App\Models\AboutUs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
+use App\Models\OurServices;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -147,6 +148,44 @@ class AdminController extends Controller
             return response()->json([
                 'status' => 200,
                 'message' => 'Data created successfully!'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!'
+            ]);
+        }
+    }
+
+    public function OurServicesAdd(Request $request)
+    {
+        $getData = $request->validate([
+            'services-icon' => 'required',
+            'services-name' => 'required|min:2',
+            'services-image' => 'required|url',
+            'services-description' => 'required|min:5'
+        ], [
+            'services-icon.required' => 'Icon is required!',
+            'services-name.required' => 'Service name is required!',
+            'services-name.min' => 'Service name must be two characters long!',
+            'services-image.required' => 'Image is required!',
+            'services-image.url' => 'Please submit a url of image!',
+            'services-description.required' => 'Description is required!',
+            'services-description.min' => 'Description must be minimum five characters long!'
+        ]);
+
+        $matchData = [
+            'icon' => $getData['services-icon'],
+            'name' => $getData['services-name'],
+            'image' => $getData['services-image'],
+            'description' => $getData['services-description']
+        ];
+
+        $success = OurServices::create($matchData);
+        if ($success) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Services added successfully!'
             ]);
         } else {
             return response()->json([

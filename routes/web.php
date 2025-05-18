@@ -26,6 +26,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('admin-dashboard/callback-requests', 'Callbackrequests')->name('callback-requests');
         Route::post('admin-dashboard/we-offer-add', 'WeOfferAdd')->name('we-offer-add');
         Route::post('admin-dashboard/about-us-add', 'AboutUsAdd')->name('about-us-add');
+        Route::post('admin-dashboard/our-services-add', 'OurServicesAdd')->name('our-services-add');
     });
 });
 
