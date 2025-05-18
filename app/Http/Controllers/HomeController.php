@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
+use App\Models\LandingWhatWeoffer;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class HomeController extends Controller
     public function index()
     {
         $FetchLandingContent = LandingContent::where('id', 7)->first();
-        return view('index', compact('FetchLandingContent'));
+        $FetchWhatweoffer = LandingWhatWeoffer::orderBy('created_at', 'desc')->get();
+        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer'));
     }
 
     public function callbackRequest(Request $request)
