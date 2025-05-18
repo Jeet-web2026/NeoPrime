@@ -27,6 +27,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('admin-dashboard/we-offer-add', 'WeOfferAdd')->name('we-offer-add');
         Route::post('admin-dashboard/about-us-add', 'AboutUsAdd')->name('about-us-add');
         Route::post('admin-dashboard/our-services-add', 'OurServicesAdd')->name('our-services-add');
+        Route::post('admin-dashboard/latest-videos-add', 'LatestVideosAdd')->name('latest-videos-add');
     });
 });
 

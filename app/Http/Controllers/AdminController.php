@@ -6,6 +6,7 @@ use App\Models\AboutUs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
+use App\Models\Latestvideos;
 use App\Models\OurServices;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        return view('admin.dashboard');
+        $NewCallBack = CallbackRequest::count();
+        return view('admin.dashboard', compact('NewCallBack'));
     }
 
     public function GetLandingcontent()
@@ -186,6 +188,41 @@ class AdminController extends Controller
             return response()->json([
                 'status' => 200,
                 'message' => 'Services added successfully!'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!'
+            ]);
+        }
+    }
+
+    public function LatestVideosAdd(Request $request)
+    {
+        $getData = $request->validate([
+            'video-link' => 'required|url',
+            'video-image' => 'required|url',
+            'video-content' => 'required|min:5'
+        ], [
+            'video-link.required' => 'Image is required!',
+            'video-link.url' => 'Please submit a url of image!',
+            'video-image.required' => 'Image is required!',
+            'video-image.url' => 'Please submit a url of image!',
+            'video-content.required' => 'Description is required!',
+            'video-content.min' => 'Description must be minimum five characters long!'
+        ]);
+
+        $matchData = [
+            'video_link' => $getData['video-link'],
+            'video_image' => $getData['video-image'],
+            'video_content' => $getData['video-content'],
+        ];
+
+        $success = Latestvideos::create($matchData);
+        if ($success) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Video organised successfully!'
             ]);
         } else {
             return response()->json([

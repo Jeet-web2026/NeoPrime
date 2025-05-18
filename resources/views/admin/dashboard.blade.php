@@ -81,7 +81,7 @@
                                             <div class="col-md-4 px-2">
                                                 <div class="card shadow border-0">
                                                     <div class="card-body">
-                                                        <h2 class="fs-2 text-black fw-semibold text-center">15</h2>
+                                                        <h2 class="fs-2 text-black fw-semibold text-center">{{ $NewCallBack }}</h2>
                                                         <p class="text-uppercase mb-0 text-center text-black">new callback request</p>
                                                     </div>
                                                 </div>
@@ -183,6 +183,7 @@
                                             <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Our Offer</button>
                                             <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">About Us</button>
                                             <button class="nav-link" id="nav-services-tab" data-bs-toggle="tab" data-bs-target="#nav-services" type="button" role="tab" aria-controls="nav-services" aria-selected="false">Services</button>
+                                            <button class="nav-link" id="nav-videos-tab" data-bs-toggle="tab" data-bs-target="#nav-videos" type="button" role="tab" aria-controls="nav-videos" aria-selected="false">Videos</button>
                                         </div>
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
@@ -200,6 +201,9 @@
                                         </div>
                                         <div class="tab-pane fade" id="nav-services" role="tabpanel" aria-labelledby="nav-services-tab" tabindex="0">
                                             <x-our-services />
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-videos" role="tabpanel" aria-labelledby="nav-videos-tab" tabindex="0">
+                                            <x-latest-videos />
                                         </div>
                                     </div>
                                 </div>
