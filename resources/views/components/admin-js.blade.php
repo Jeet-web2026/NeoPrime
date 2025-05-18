@@ -142,10 +142,17 @@
         $(document).on('submit', '#what-we-offer', function(e) {
             e.preventDefault();
             $.post({
-                url: "",
+                url: "{{ route('we-offer-add') }}",
                 data: $(this).serialize(),
                 success: function(response) {
-
+                    $('.what-we-offer-result').html(`
+                    <div class="alert alert-success" role="alert">
+                        ${response.message}
+                    </div>                    
+                    `);
+                    setTimeout(() => {
+                        $('.what-we-offer-result').find('.alert').remove();
+                    }, 2500);
                 }
             });
         });

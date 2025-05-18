@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
+use App\Models\LandingWhatWeoffer;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -75,6 +76,17 @@ class AdminController extends Controller
             'service-name.string' => 'Service name must be a string',
             'service-related-image.required' => 'Service image is required',
             'service-related-image.url' => 'Service image must be a valid URL',
+        ]);
+
+        $matchData = [
+            'service_name' => $getData['service-name'],
+            'service_img_url' => $getData['service-related-image']
+        ];
+
+        $success = LandingWhatWeoffer::updateOrCreate([
+            'id' => 1,
+        ],[
+            LandingWhatWeoffer::updateOrCreate($matchData),
         ]);
     }
 }
