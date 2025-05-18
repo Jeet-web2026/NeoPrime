@@ -34,6 +34,9 @@ Route::controller(WhatweofferController::class)->group(function () {
 });
 
 Route::controller(AboutController::class)->group(function () {
+    Route::get('about-us', 'AboutUs')->name('about-us-page');
+    Route::get('who-we-are', 'Whoweare')->name('who-we-are-page');
+    Route::get('vission-mission', 'VissionMission')->name('vission-mission-page');
 });
 
 Route::fallback(function () {

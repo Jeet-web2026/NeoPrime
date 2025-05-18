@@ -129,7 +129,7 @@
                     <h5 class="text-capitalize mb-0 fs-5 py-2 px-3 shadow text-center fw-bold rounded-pill text-primary">about us</h5>
                 </div>
                 <h2 class="text-capitalize fs-1 text-black font-500">{{ $FetchAboutUsContent->about_heading }}</h2>
-                <p class="mb-0 text-capitalize font-500 text-secondary">{{ $Part }}<span class="text-primary">...read more</span></p>
+                <p class="mb-0 text-capitalize font-500 text-secondary">{{ $Part }}<span class="text-primary" style="cursor: pointer;">...read more</span></p>
                 <ul class="ps-0 mt-3">
                     <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_first_point }}</li>
                     <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_second_point }}</li>

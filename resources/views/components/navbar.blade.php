@@ -17,9 +17,9 @@
                             About<i class="bi bi-plus ms-2"></i>
                         </a>
                         <ul class="dropdown-menu no-radius border-0 shadow-sm">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('about-us-page') }}">about us</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('who-we-are-page') }}">who we are</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('vission-mission-page') }}">our vission & mission</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown me-2">
