@@ -66,12 +66,12 @@ class AdminController extends Controller
         ]);
     }
 
-    public function WeOfferAdd(Request $request) 
+    public function WeOfferAdd(Request $request)
     {
         $getData = $request->validate([
             'service-name' => 'required|string',
             'service-related-image' => 'required|url',
-        ],[
+        ], [
             'service-name.required' => 'Service name is required',
             'service-name.string' => 'Service name must be a string',
             'service-related-image.required' => 'Service image is required',
@@ -82,11 +82,21 @@ class AdminController extends Controller
             'service_name' => $getData['service-name'],
             'service_img_url' => $getData['service-related-image']
         ];
+        try {
+            LandingWhatWeoffer::Create(
+                $matchData
+            );
 
-        $success = LandingWhatWeoffer::updateOrCreate([
-            'id' => 1,
-        ],[
-            LandingWhatWeoffer::updateOrCreate($matchData),
-        ]);
+            return response()->json([
+                'status' => 200,
+                'message' => 'Data added successfully!'
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!',
+                'error' => $th->getMessage()
+            ]);
+        }
     }
 }

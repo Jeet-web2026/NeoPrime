@@ -141,20 +141,43 @@
 
         $(document).on('submit', '#what-we-offer', function(e) {
             e.preventDefault();
+
             $.post({
                 url: "{{ route('we-offer-add') }}",
                 data: $(this).serialize(),
                 success: function(response) {
                     $('.what-we-offer-result').html(`
-                    <div class="alert alert-success" role="alert">
-                        ${response.message}
-                    </div>                    
+                        <div class="alert alert-success text-capitalize" role="alert">
+                            ${response.message}
+                        </div>                    
                     `);
                     setTimeout(() => {
                         $('.what-we-offer-result').find('.alert').remove();
                     }, 2500);
+                },
+                error: function(xhr) {
+                    let errorMessage = 'Something went wrong!';
+
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+
+                    if (xhr.status === 422 && xhr.responseJSON.errors) {
+                        const errors = Object.values(xhr.responseJSON.errors).flat();
+                        errorMessage = errors.join('<br>');
+                    }
+
+                    $('.what-we-offer-result').html(`
+                        <div class="alert alert-danger text-capitalize" role="alert">
+                            ${errorMessage}
+                        </div>                    
+                    `);
+                    setTimeout(() => {
+                        $('.what-we-offer-result').find('.alert').remove();
+                    }, 3000);
                 }
             });
         });
+
     });
 </script>
