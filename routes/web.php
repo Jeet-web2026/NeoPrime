@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HomeController;
@@ -24,11 +25,15 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('admin-dashboard/landing-content-add', 'AddLandingContent')->name('landing-page-content-add');
         Route::get('admin-dashboard/callback-requests', 'Callbackrequests')->name('callback-requests');
         Route::post('admin-dashboard/we-offer-add', 'WeOfferAdd')->name('we-offer-add');
+        Route::post('admin-dashboard/about-us-add', 'AboutUsAdd')->name('about-us-add');
     });
 });
 
 Route::controller(WhatweofferController::class)->group(function () {
     Route::get('what-we-offer/product={id}', 'OfferedFullDetails')->name('offer-full-details');
+});
+
+Route::controller(AboutController::class)->group(function () {
 });
 
 Route::fallback(function () {

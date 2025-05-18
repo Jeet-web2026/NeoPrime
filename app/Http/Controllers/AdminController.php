@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
@@ -100,6 +101,55 @@ class AdminController extends Controller
                 'status' => 500,
                 'message' => 'Something went wrong!',
                 'error' => $th->getMessage()
+            ]);
+        }
+    }
+
+    public function AboutUsAdd(Request $request)
+    {
+        $getData = $request->validate([
+            'about-heading' => 'required|min:3',
+            'about-first-img' => 'required|url',
+            'about-second-image' => 'required|url',
+            'about-description' => 'required|min:5',
+            'about-first-point' => 'required|min:3',
+            'about-second-point' => 'required|min:3',
+            'about-third-point' => 'required|min:3',
+        ], [
+            'about-heading.required' => 'Heading is required!',
+            'about-heading.min' => 'Heading must be three characters long!',
+            'about-first-img.required' => 'First image is required!',
+            'about-first-img.url' => 'Please submit a url',
+            'about-second-image.required' => 'First image is required!',
+            'about-second-image.url' => 'Please submit a url',
+            'about-description.required' => 'Description is required!',
+            'about-description.min' => 'Description must be five characters long!',
+            'about-first-point.required' => 'First point is required!',
+            'about-first-point.min' => 'First point must be three characters long!',
+            'about-second-point.required' => 'Second point is required!',
+            'about-second-point.min' => 'Second point must be three characters long!',
+            'about-third-point.required' => 'Third point is required!',
+            'about-third-point.min' => 'Third point must be three characters long!',
+        ]);
+
+        $matchData = [
+            'about_heading' => $getData['about-heading'],
+            'about_description' => $getData['about-description'],
+            'about_first_point' => $getData['about-first-point'],
+            'about_second_point' => $getData['about-second-point'],
+            'about_third_point' => $getData['about-third-point']
+        ];
+
+        $success = AboutUs::create($matchData);
+        if ($success) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Data created successfully!'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!'
             ]);
         }
     }

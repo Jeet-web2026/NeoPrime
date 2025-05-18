@@ -180,5 +180,44 @@
             });
         });
 
+        $(this).on('submit', '#about-us-content', function(e) {
+            e.preventDefault();
+            $.post({
+                url: "{{ route('about-us-add') }}",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $(document).find('about-us-add-result').html(`
+                    <div class="alert alert-success" role="alert">
+                        ${response.message}
+                    </div>
+                    `);
+                    setTimeout(() => {
+                        $(document).find('about-us-add-result .alert-success').remove();
+                    }, 2500);
+                },
+                error: function(xhr) {
+                    let errorMessage = 'Something went wrong!';
+
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+
+                    if (xhr.status === 422 && xhr.responseJSON.errors) {
+                        const errors = Object.values(xhr.responseJSON.errors).flat();
+                        errorMessage = errors.join('<br>');
+                    }
+
+                    $(document).find('about-us-add-result').html(`
+                        <div class="alert alert-danger text-capitalize" role="alert">
+                            ${errorMessage}
+                        </div>                    
+                    `);
+                    setTimeout(() => {
+                        $(document).find('about-us-add-result').find('.alert-danger').remove();
+                    }, 3000);
+                }
+            });
+        });
+
     });
 </script>
