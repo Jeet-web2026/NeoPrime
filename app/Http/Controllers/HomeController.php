@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
@@ -14,7 +15,10 @@ class HomeController extends Controller
     {
         $FetchLandingContent = LandingContent::where('id', 7)->first();
         $FetchWhatweoffer = LandingWhatWeoffer::all();
-        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer'));
+        $FetchAboutUsContent = AboutUs::where('id', 3)->first();
+        $description = explode(' ', strip_tags($FetchAboutUsContent->about_description));
+        $Part = implode(' ', array_slice($description, 0, 30));
+        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part'));
     }
 
     public function callbackRequest(Request $request)

@@ -120,20 +120,20 @@
         <div class="row px-5 align-items-center">
             <div class="col-md-6 ps-5">
                 <div class="d-flex align-items-center">
-                    <img src="https://img.freepik.com/free-photo/people-office-analyzing-checking-finance-graphs_23-2150377131.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="it-consulting-img" class="it-consulting-img rounded-2 shadow me-3">
-                    <img src="https://img.freepik.com/free-photo/industrial-designers-working-office-medium-shot_23-2149307801.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" alt="it-consulting-img-second" class="it-consulting-img-second rounded-2 shadow">
+                    <img src="{{ $FetchAboutUsContent->about_first_img }}" alt="{{ $FetchAboutUsContent->about_heading }}" class="it-consulting-img rounded-2 shadow me-3">
+                    <img src="{{ $FetchAboutUsContent->about_second_img }}" alt="{{ $FetchAboutUsContent->about_heading }}" class="it-consulting-img-second rounded-2 shadow">
                 </div>
             </div>
             <div class="col-md-6 pe-5">
                 <div class="w-25 mb-3">
                     <h5 class="text-capitalize mb-0 fs-5 py-2 px-3 shadow text-center fw-bold rounded-pill text-primary">about us</h5>
                 </div>
-                <h2 class="text-capitalize fs-1 text-black font-500">preparing your success trusted IT services</h2>
-                <p class="mb-0 text-capitalize font-500 text-secondary">At NeoPrime, we're committed to preparing your success with trusted IT services tailored to your business goals. Our solutions ensure innovation, security, and long-term growth in today's competitive digital world.</p>
+                <h2 class="text-capitalize fs-1 text-black font-500">{{ $FetchAboutUsContent->about_heading }}</h2>
+                <p class="mb-0 text-capitalize font-500 text-secondary">{{ $Part }}<span class="text-primary">...read more</span></p>
                 <ul class="ps-0 mt-3">
-                    <li class="text-capitalize"><i class="bi bi-check2-square me-2 text-primary"></i>Scalable and secure IT solutions to fuel your business success.</li>
-                    <li class="text-capitalize"><i class="bi bi-check2-square me-2 text-primary"></i>Reliable support from certified and experienced professionals.</li>
-                    <li class="text-capitalize"><i class="bi bi-check2-square me-2 text-primary"></i>Customized strategies aligned with your company's unique needs.</li>
+                    <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_first_point }}</li>
+                    <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_second_point }}</li>
+                    <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_third_point }}</li>
                 </ul>
                 <div class="d-flex align-items-center w-100">
                     <a href="javascript:void(0)" class="btn hire-us px-4 py-2 text-capitalize text-light me-3">hire our experts<i class="bi bi-arrow-right ms-2"></i></a>
