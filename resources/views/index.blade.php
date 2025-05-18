@@ -553,6 +553,23 @@
             content: '→';
         }
 
+        #populer-services .popular-services .slick-current .card {
+            background-color: #5404f5 !important;
+        }
+
+        #populer-services .popular-services .slick-current h4 {
+            color: #ffffff !important;
+        }
+
+        #populer-services .popular-services .slick-current p {
+            color: #ffffff !important;
+        }
+
+        #populer-services .popular-services .slick-current a {
+            color: #ffffff !important;
+        }
+
+
         /* populer-services end */
 
         /* youtube-videos start */
