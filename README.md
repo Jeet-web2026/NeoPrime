@@ -11,7 +11,7 @@
 - ✅ Ticketing System (Create, Assign, Track, Close Tickets)
 - ✅ Admin & Client Dashboards
 - ✅ Service History and Reporting
-- ✅ Role-Based Access Control (Admin, Technician, Client)
+- ✅ Role-Based Access Control (Admin, Employee, Client)
 - ✅ Notifications & Email Alerts
 - ✅ Project and Task Management
 - ✅ Analytics & Service Performance Metrics
