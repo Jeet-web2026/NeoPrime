@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WhatweofferController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,10 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('about-us', 'AboutUs')->name('about-us-page');
     Route::get('who-we-are', 'Whoweare')->name('who-we-are-page');
     Route::get('vission-mission', 'VissionMission')->name('vission-mission-page');
+});
+
+Route::controller(BlogController::class)->group(function () {
+    Route::get('viewblogs/blog={id}', 'ViewBlog')->name('blog-full-view');
 });
 
 Route::fallback(function () {

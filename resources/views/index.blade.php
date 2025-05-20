@@ -351,6 +351,7 @@
                 <div class="col p-2">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
+                            <a href="{{ route('blog-full-view', $blog->id) }}" class="stretched-link"></a>
                             <h5 class="card-title text-capitalize text-truncate" style="width: 200px;">{{ $blog->blog_tittle }}</h5>
                             <p class="card-text">{{ $blog->short_description }}...</p>
                             <img src="{{ $blog->blog_image }}" class="rounded-2 card-img" alt="{{ $blog->blog_tittle }}">
