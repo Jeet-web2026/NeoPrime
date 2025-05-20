@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Blogs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
@@ -223,6 +224,40 @@ class AdminController extends Controller
             return response()->json([
                 'status' => 200,
                 'message' => 'Video organised successfully!'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!'
+            ]);
+        }
+    }
+
+    public function BlogsAdd(Request $request)
+    {
+        $getData = $request->validate([
+            'blog-tittle' => 'required',
+            'blog-image' => 'required|url',
+            'blog-description' => 'required|min:5'
+        ], [
+            'blog-tittle.required' => 'Title is required!',
+            'blog-image.required' => 'Image is required!',
+            'blog-image.url' => 'Please submit a url of image!',
+            'blog-description.required' => 'Description is required!',
+            'blog-description.min' => 'Description must be minimum five characters long!'
+        ]);
+
+        $matchData = [
+            'blog_tittle' => $getData['blog-tittle'],
+            'blog_image' => $getData['blog-image'],
+            'blog_description' => $getData['blog-description'],
+        ];
+
+        $success = Blogs::create($matchData);
+        if ($success) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Blog added successfully!'
             ]);
         } else {
             return response()->json([

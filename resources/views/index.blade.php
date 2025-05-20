@@ -347,51 +347,27 @@
             </div>
             <h2 class="text-capitalize text-black fs-2 text-center mt-2">explore our latest blogs and events</h2>
             <div class="row mt-5 blogs px-3">
+                @forelse($FetchBlog as $blog)
                 <div class="col p-2">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title text-capitalize text-truncate" style="width: 200px;">{{ $blog->blog_tittle }}</h5>
+                            <p class="card-text">{{ $blog->short_description }}...</p>
+                            <img src="{{ $blog->blog_image }}" class="rounded-2 card-img" alt="{{ $blog->blog_tittle }}">
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col p-2">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-capitalize text-truncate">blog title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col p-2">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-2">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-2">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-2">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <img src="https://www.designveloper.com/wp-content/uploads/2020/08/blog-1024x688.jpg" class="rounded-2 card-img" alt="">
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </section>

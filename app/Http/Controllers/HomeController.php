@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Blogs;
 use App\Models\CallbackRequest;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
 use App\Models\Latestvideos;
 use App\Models\OurServices;
-use App\Models\Vendor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,7 +22,13 @@ class HomeController extends Controller
         $Part = implode(' ', array_slice($description, 0, 30));
         $FetchPopularServices = OurServices::all();
         $FetchLatestVideoContent = Latestvideos::where('id', 1)->first();
-        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part', 'FetchPopularServices', 'FetchLatestVideoContent'));
+        $FetchBlog = Blogs::all();
+        $FetchBlog->map(function ($blog) {
+            $words = explode(' ', strip_tags($blog->blog_description));
+            $blog->short_description = implode(' ', array_slice($words, 0, 8));
+            return $blog;
+        });
+        return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part', 'FetchPopularServices', 'FetchLatestVideoContent', 'FetchBlog'));
     }
 
     public function callbackRequest(Request $request)
