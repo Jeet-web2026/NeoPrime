@@ -45,6 +45,7 @@ Route::controller(AboutController::class)->group(function () {
 
 Route::controller(BlogController::class)->group(function () {
     Route::get('viewblogs/blog={id}', 'ViewBlog')->name('blog-full-view');
+    Route::get('blogs', 'ViewBlogs')->name('blogs-full-view');
 });
 
 Route::fallback(function () {

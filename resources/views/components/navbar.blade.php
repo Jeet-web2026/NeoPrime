@@ -43,7 +43,7 @@
                         </ul>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="nav-link text-light" href="javascript:void(0)">Blogs</a>
+                        <a class="nav-link text-light" href="{{ route('blogs-full-view') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="javascript:void(0)">Contact Us</a>
