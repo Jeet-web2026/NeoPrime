@@ -56,6 +56,7 @@
         }
         navgationSetup(0);
         navgationSetup(1);
+        navgationSetup(2);
 
         $(document).on('submit', '#landing-content-form', function(e) {
             e.preventDefault();

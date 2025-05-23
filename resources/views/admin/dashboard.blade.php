@@ -19,6 +19,10 @@
                                         <i class="bi bi-gear me-2"></i>
                                         home
                                     </li>
+                                    <li class="text-capitalize fs-5 text-light shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3">
+                                        <i class="bi bi-gear me-2"></i>
+                                        services
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -208,6 +212,22 @@
                                         </div>
                                         <div class="tab-pane fade" id="nav-blogs" role="tabpanel" aria-labelledby="nav-blogs-tab" tabindex="0">
                                             <x-blogs />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border-0 bg-transparent component">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-our-services-tab" data-bs-toggle="tab" data-bs-target="#nav-our-services" type="button" role="tab" aria-controls="nav-our-services" aria-selected="true">Our Services</button>
+                                            <button class="nav-link" id="nav-our-pricing-tab" data-bs-toggle="tab" data-bs-target="#nav-pricing" type="button" role="tab" aria-controls="nav-pricing" aria-selected="false">Our Pricing</button>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-our-services" role="tabpanel" aria-labelledby="nav-our-services-tab" tabindex="0">
+                                            <x-admin-landing-content-tab />
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-pricing" role="tabpanel" aria-labelledby="nav-our-pricing-tab" tabindex="0">
+                    -*
                                         </div>
                                     </div>
                                 </div>
