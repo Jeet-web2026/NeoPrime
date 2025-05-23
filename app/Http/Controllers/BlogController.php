@@ -15,6 +15,12 @@ class BlogController extends Controller
 
     public function ViewBlogs()
     {
-        return view('blog.all-blogs');
+        $blogs = Blogs::orderBy('id', 'desc')->get();
+        $blogs->map(function ($blog) {
+            $words = explode(' ', strip_tags($blog->blog_description));
+            $blog->short_description = implode(' ', array_slice($words, 0, 25));
+            return $blog;
+        });
+        return view('blog.all-blogs', compact('blogs'));
     }
 }
