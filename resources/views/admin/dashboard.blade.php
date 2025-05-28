@@ -227,7 +227,6 @@
                                             <x-admin-landing-content-tab />
                                         </div>
                                         <div class="tab-pane fade" id="nav-pricing" role="tabpanel" aria-labelledby="nav-our-pricing-tab" tabindex="0">
-                    -*
                                         </div>
                                     </div>
                                 </div>
