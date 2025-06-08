@@ -342,6 +342,10 @@
     {{--calenderly--}}
     <section id="calerderly">
         <div class="container-fluid p-4">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="text-center text-capitalize fs-5 fw-semibold shadow text-primary px-4 py-2 rounded-pill">schedule your time</p>
+            </div>
+            <h2 class="text-center fs-1 text-black font-500 text-capitalize mb-0">book an appointment</h2>
             <div class="calendly-inline-widget" data-url="https://calendly.com/jeetnath2110/30min" style="min-width:320px;height:700px;"></div>
         </div>
     </section>
