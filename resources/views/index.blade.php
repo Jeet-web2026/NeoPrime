@@ -339,6 +339,14 @@
     </section>
     {{--show team members--}}
 
+    {{--calenderly--}}
+    <section id="calerderly">
+        <div class="container-fluid p-4">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/jeetnath2110/30min" style="min-width:320px;height:700px;"></div>
+        </div>
+    </section>
+    {{--calenderly--}}
+
     {{--our blogs--}}
     <section id="our-blogs">
         <div class="container-fluid pb-5 px-5">
@@ -613,6 +621,13 @@
         }
 
         /* our-blogs end */
+
+        /* calenderly start */
+        #calerderly {
+            background-color: #F7F7F7;
+        }
+
+        /* calemnderly end */
     </style>
     @endsection
 
@@ -742,5 +757,6 @@
     <script src="https://www.google.com/recaptcha/api.js"
         async defer>
     </script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     @endsection
 </x-MainLayout>
