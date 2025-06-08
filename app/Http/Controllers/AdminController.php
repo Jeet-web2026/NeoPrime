@@ -266,4 +266,20 @@ class AdminController extends Controller
             ]);
         }
     }
+
+    public function ServicesShow()
+    {
+        $data = OurServices::all();
+        if ($data) {
+            return response()->json([
+                'status' => 200,
+                'data' => $data
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'data' => "Something went wrong!"
+            ]);
+        }
+    }
 }

@@ -195,7 +195,7 @@
                     `);
                     setTimeout(() => {
                         $(document).find('.about-us-add-result .alert-success').remove();
-                         $form[0].reset();
+                        $form[0].reset();
                     }, 2500);
                 },
                 error: function(xhr) {
@@ -236,8 +236,9 @@
                     `);
                     setTimeout(() => {
                         $(document).find('.result-our-services .alert-success').remove();
-                         $form[0].reset();
+                        $form[0].reset();
                     }, 2500);
+                    FetchServices();
                 },
                 error: function(xhr) {
                     let errorMessage = 'Something went wrong!';
@@ -277,7 +278,7 @@
                     `);
                     setTimeout(() => {
                         $(document).find('.latest-videos-add-result .alert-success').remove();
-                         $form[0].reset();
+                        $form[0].reset();
                     }, 2500);
                 },
                 error: function(xhr) {
@@ -318,7 +319,7 @@
                     `);
                     setTimeout(() => {
                         $(document).find('.blog-add-form-result .alert-success').remove();
-                         $form[0].reset();
+                        $form[0].reset();
                     }, 2500);
                 },
                 error: function(xhr) {
@@ -344,6 +345,32 @@
                 }
             });
         });
+
+        function FetchServices() {
+            $.get({
+                url: "{{ route('services') }}",
+                success: function(response) {
+                    if (response.status == 200) {
+                        $('#all-services-add #service-name').append(`
+                                <option class="text-capitalize">Choose Service</option>
+                            `);
+                        $.each(response.data, function(index, service) {
+                            $('#all-services-add #service-name').append(`
+                                <option value="${service.name}" class="text-capitalize">${service.name}</option>
+                            `);
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    if(xhr.status == 500){
+                        $('#all-services-add #service-name').append(`
+                                <option class="text-capitalize">${xhr.responseText}</option>
+                        `);
+                    }
+                }
+            });
+        }
+        FetchServices();
 
     });
 </script>
