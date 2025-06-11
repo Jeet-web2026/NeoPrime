@@ -374,6 +374,7 @@
 
         function addServicesDescription() {
             $(document).on('submit', '#all-services-add', function(e) {
+                let form = $(this);
                 e.preventDefault();
                 $.ajax({
                     url: "{{ route('services-description') }}",
@@ -386,6 +387,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>                        
                         `);
+                        form.trigger('reset');
                     },
                     error: function(xhr) {
                         let message = "Something went wrong. Please try again.";
