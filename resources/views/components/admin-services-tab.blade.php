@@ -1,5 +1,6 @@
 <div class="card bg-transparent border-0 shadow">
     <div class="card-body">
+        <div class="result-services-description"></div>
         <form id="all-services-add">
             @csrf
             <div class="mb-3">

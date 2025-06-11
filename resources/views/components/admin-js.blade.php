@@ -356,13 +356,13 @@
                             `);
                         $.each(response.data, function(index, service) {
                             $('#all-services-add #service-name').append(`
-                                <option value="${service.name}" class="text-capitalize">${service.name}</option>
+                                <option value="${service.id}" class="text-capitalize">${service.name}</option>
                             `);
                         });
                     }
                 },
                 error: function(xhr, status, error) {
-                    if(xhr.status == 500){
+                    if (xhr.status == 500) {
                         $('#all-services-add #service-name').append(`
                                 <option class="text-capitalize">${xhr.responseText}</option>
                         `);
@@ -372,5 +372,45 @@
         }
         FetchServices();
 
+        function addServicesDescription() {
+            $(document).on('submit', '#all-services-add', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{{ route('services-description') }}",
+                    method: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $(document).find('.result-services-description').html(`
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>${response.message}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>                        
+                        `);
+                    },
+                    error: function(xhr) {
+                        let message = "Something went wrong. Please try again.";
+
+                        if (xhr.status === 422) {
+                            const errors = xhr.responseJSON.errors;
+                            message = "<ul>";
+                            $.each(errors, function(key, val) {
+                                message += `<li>${val[0]}</li>`;
+                            });
+                            message += "</ul>";
+                        } else if (xhr.status === 500) {
+                            message = "Internal server error. Please contact the administrator.";
+                        }
+
+                        $('.result-services-description').html(`
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                ${message}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `);
+                    }
+                });
+            });
+        }
+        addServicesDescription();
     });
 </script>
