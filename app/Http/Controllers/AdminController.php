@@ -11,6 +11,7 @@ use App\Models\Latestvideos;
 use App\Models\OurServices;
 use App\Models\ServiceDescription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -286,32 +287,37 @@ class AdminController extends Controller
 
     public function ServicesDescription(Request $request)
     {
-        $request->validate([
-            'service-name' => 'required|integer',
-            'service-description' => 'required|min:2'
-        ], [
-            'service-name.required' => 'Service name is required!',
-            'service-description.required' => 'Description required!',
-            'service-description.min' => 'Description must be 2 or 3 characters long!'
-        ]);
-
-        $result = ServiceDescription::updateOrCreate(
-            ['id' => $request['service-name']],
-            [
-                'services_id' => $request['service-name'],
-                'services_description' => $request['service-description']
-            ]
-        );
-
-        if ($result) {
-            return response()->json([
-                'status' => 200,
-                'message' => 'Description added successfuly!'
+        try {
+            $request->validate([
+                'service-name' => 'required|integer',
+                'service-description' => 'required|min:2'
+            ], [
+                'service-name.required' => 'Service name is required!',
+                'service-description.required' => 'Description required!',
+                'service-description.min' => 'Description must be 2 or 3 characters long!'
             ]);
-        } else {
+
+            $result = ServiceDescription::updateOrCreate(
+                ['services_id' => $request['service-name']],
+                ['services_description' => $request['service-description']]
+            );
+
+            if ($result) {
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Description added or updated successfully!'
+                ]);
+            }
+
             return response()->json([
                 'status' => 500,
                 'message' => 'Something went wrong!'
+            ]);
+        } catch (\Exception $e) {
+            Log::error('ServicesDescription Error: ' . $e->getMessage());
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal server error!'
             ]);
         }
     }
