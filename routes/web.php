@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\WhatweofferController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,10 @@ Route::controller(AboutController::class)->group(function () {
 Route::controller(BlogController::class)->group(function () {
     Route::get('viewblogs/blog={id}', 'ViewBlog')->name('blog-full-view');
     Route::get('blogs', 'ViewBlogs')->name('blogs-full-view');
+});
+
+Route::controller(ServicesController::class)->group(function () {
+    Route::get('service/{id}', 'ViewServices')->name('view-service');
 });
 
 Route::fallback(function () {

@@ -178,7 +178,7 @@
                             <div class="d-flex justify-content-center align-items-center">
                                 <img src="{{ $service->image }}" alt="web-site-design" class="my-3">
                             </div>
-                            <a href="javascript:void(0)" class="btn border-0 shadow-none text-black text-capitalize mt-3" style="font-size: 1rem;">read more<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="{{ route('view-service', $service->id) }}" class="btn border-0 shadow-none text-black text-capitalize mt-3" style="font-size: 1rem;">read more<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
