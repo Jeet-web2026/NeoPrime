@@ -9,7 +9,7 @@ class ServicesController extends Controller
 {
     public function ViewServices($id)
     {
-        $data = ServiceDescription::with('services')->findOrFail($id);
+        $data = ServiceDescription::with('services')->where('id', $id)->first();
         return view('services.view-service', compact('data'));
     }
 }
