@@ -52,6 +52,7 @@ Route::controller(BlogController::class)->group(function () {
 });
 
 Route::controller(ServicesController::class)->group(function () {
+    Route::get('all-services', 'AllServices')->name('all-services');
     Route::get('service/{id}', 'ViewServices')->name('view-service');
 });
 
