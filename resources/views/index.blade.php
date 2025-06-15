@@ -34,7 +34,7 @@
                     <div class="card-body d-flex justify-content-end align-items-center">
                         <div class="card contact-form mt-5 shadow bg-white w-75">
                             <div class="card-body">
-                                <h3 class="text-capitalize fs-4 fw-bold text-black">get callback</h3>
+                                <h3 class="text-capitalize fs-4 fw-bold text-black mb-4">get callback</h3>
                                 <form id="callback-request-form">
                                     @csrf
                                     <div class="callback-request-form-result"></div>
@@ -52,8 +52,9 @@
                                             <option value="E-commerce">E-commerce</option>
                                         </select>
                                     </div>
-                                    <div class="g-recaptcha mb-2" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                                    <button type="submit" class="btn border-0 shadow-sm enquiry-btn text-light">Enquire Now<i class="bi bi-arrow-right ms-2"></i></button>
+                                    <button data-sitekey="6LcYr2ErAAAAAP5eHID-6M5D_btm3GCKylIdm1lr"
+                                        data-callback='onSubmit'
+                                        data-action='submit' class="btn border-0 shadow-sm enquiry-btn text-light g-recaptcha">Enquire Now<i class="bi bi-arrow-right ms-2"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -757,10 +758,7 @@
     </script>
     @endsection
 
-    @section('extrajscdns')
-    <script src="https://www.google.com/recaptcha/api.js"
-        async defer>
-    </script>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    @section('extracsscdns')
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     @endsection
 </x-MainLayout>
