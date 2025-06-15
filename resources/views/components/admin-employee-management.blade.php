@@ -1,6 +1,6 @@
 <div class="card border-0 shadow">
     <div class="card-body">
-        <form>
+        <form id="employee-manage-form">
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="employee-position" class="form-label text-capitalize">choose position</label>
@@ -27,8 +27,10 @@
                     <input type="text" class="form-control shadow-none" name="employee-name">
                 </div>
                 <div class="col-md-12">
-                    <label for="employee-name" class="form-label text-capitalize">designation</label>
-                    <input type="text" class="form-control shadow-none" name="employee-name">
+                    <label for="employee-designation" class="form-label text-capitalize">designation</label>
+                    <select class="form-select shadow-none text-capitalize employee-designation" name="employee-designation">
+                        
+                    </select>
                 </div>
             </div>
             <button type="submit" class="btn btn-success px-4 py-2">Save</button>

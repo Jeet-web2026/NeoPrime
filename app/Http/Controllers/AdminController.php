@@ -357,4 +357,15 @@ class AdminController extends Controller
             ]);
         }
     }
+
+    public function FetchworkingDesignation()
+    {
+        $data = CareerVaccancy::select('designation')->pluck('designation');
+        dd($data);
+
+        return response()->json([
+            'status' => 200,
+            'data' => $data
+        ]);
+    }
 }

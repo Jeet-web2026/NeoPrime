@@ -442,5 +442,16 @@
                 }
             });
         });
+
+        $.get({
+            url: "{{ route('fetch-working-designation') }}",
+            success: function(response) {
+                let options = '<option value="">Choose Designation</option>';
+                options += response.data.map(item => `<option value="${item}">${item}</option>`).join('');
+                $('#employee-manage-form .employee-designation').html(options);
+            }
+        });
+
+
     });
 </script>
