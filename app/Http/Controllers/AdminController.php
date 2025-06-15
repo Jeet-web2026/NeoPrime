@@ -11,6 +11,7 @@ use App\Models\Latestvideos;
 use App\Models\OurServices;
 use App\Models\ServiceDescription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
@@ -187,6 +188,7 @@ class AdminController extends Controller
         ];
 
         $success = OurServices::create($matchData);
+        Cache::forget('all_services');
         if ($success) {
             return response()->json([
                 'status' => 200,
