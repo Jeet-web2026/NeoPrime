@@ -443,5 +443,40 @@
             });
         });
 
+        $.get({
+            url: "https://countriesnow.space/api/v0.1/countries",
+            success: function(response) {
+                $('#employee-manage-form .employee-country').append(`                    
+                    <option value="">Choose Country</option>                    
+                `);
+                response.data.forEach(item => {
+                    $('#employee-manage-form .employee-country').append(`                    
+                            <option value="${item.country}">${item.country}</option>                    
+                    `);
+                });
+            }
+        });
+
+        $(document).on('change', '.employee-country', function() {
+            let selectedCountry = $(this).val();
+
+            $.get({
+                url: "https://countriesnow.space/api/v0.1/countries",
+                success: function(response) {
+                    $('#employee-manage-form .employee-city').html(`
+                        <option value="">Choose City</option>
+                    `);
+                    let countryData = response.data.find(item => item.country === selectedCountry);
+
+                    if (countryData && countryData.cities) {
+                        countryData.cities.forEach(city => {
+                            $('#employee-manage-form .employee-city').append(`
+                                <option value="${city}">${city}</option>
+                            `);
+                        });
+                    }
+                }
+            });
+        });
     });
 </script>

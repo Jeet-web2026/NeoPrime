@@ -37,6 +37,28 @@
                     <label for="employee-name" class="form-label text-capitalize">name</label>
                     <input type="text" class="form-control shadow-none" name="employee-name">
                 </div>
+                <div class="col-md-6 pe-1">
+                    <label for="employee-contact-number" class="form-label text-capitalize">contact number</label>
+                    <input type="number" class="form-control shadow-none" name="employee-contact-number">
+                </div>
+                <div class="col-md-6 ps-1">
+                    <label for="employee-email-id" class="form-label text-capitalize">email id</label>
+                    <input type="email" class="form-control shadow-none" name="employee-email-id">
+                </div>
+                <div class="col-md-6 pe-1 mt-2">
+                    <label for="employee-age" class="form-label text-capitalize">age</label>
+                    <input type="text" class="form-control shadow-none" name="employee-age">
+                </div>
+                <div class="col-md-6 ps-1 mt-2">
+                    <label for="employee-country" class="form-label text-capitalize">contry</label>
+                    <select class="form-select shadow-none text-capitalize employee-country" name="employee-country">      
+                    </select>
+                </div>
+                <div class="col-md-12 my-2">
+                    <label for="employee-city" class="form-label text-capitalize">city</label>
+                    <select class="form-select shadow-none text-capitalize employee-city" name="employee-city">                        
+                    </select>
+                </div>
             </div>
             <button type="submit" class="btn btn-success px-4 py-2">Save</button>
         </form>
