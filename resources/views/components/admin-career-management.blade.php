@@ -2,6 +2,7 @@
     <div class="card-body">
         <form id="career-vacancy">
             @csrf
+            <div class="career-vacancy-created-result"></div>
             <div class="mb-3">
                 <label for="designation-name" class="form-label text-capitalize">designation name</label>
                 <input type="text" class="form-control shadow-none" id="designation-name" name="designation-name">

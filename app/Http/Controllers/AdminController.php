@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutUs;
 use App\Models\Blogs;
 use App\Models\CallbackRequest;
+use App\Models\CareerVaccancy;
 use App\Models\LandingContent;
 use App\Models\LandingWhatWeoffer;
 use App\Models\Latestvideos;
@@ -332,7 +333,7 @@ class AdminController extends Controller
             'start-date' => 'required',
             'role-requirements' => 'required',
             'job-description' => 'required'
-        ],[
+        ], [
             'designation-name.required' => 'Designation is required!',
             'salary-range.required' => 'Salary range is required!',
             'start-date.required' => 'Start date is required!',
@@ -340,6 +341,20 @@ class AdminController extends Controller
             'job-description.required' => 'Description is required!',
         ]);
 
-        
+        $matchData = [
+            'designation' => $request['designation-name'],
+            'salary_range' => $request['salary-range'],
+            'start_date' => $request['start-date'],
+            'requirements' => $request['role-requirements'],
+            'description' => $request['job-description']
+        ];
+
+        $result = CareerVaccancy::create($matchData);
+        if ($result) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Career Vacancy Created Successfully!'
+            ]);
+        }
     }
 }

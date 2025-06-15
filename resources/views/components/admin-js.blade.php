@@ -418,10 +418,21 @@
         }
         addServicesDescription();
 
-        $(this).on('submit', '#career-vacancy', function(e){
+        $(this).on('submit', '#career-vacancy', function(e) {
             e.preventDefault();
             $.post({
-                
+                url: "{{ route('add-career-vacancy') }}",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $(document).find('.career-vacancy-created-result').html(`
+                    
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>${response.message}</strong>
+                        <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    
+                    `);
+                }
             });
         });
     });
