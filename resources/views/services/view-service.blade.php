@@ -9,7 +9,7 @@
                     <li class="breadcrumb-item active text-capitalize" aria-current="page">{{ $data->services->name }}</li>
                 </ol>
             </nav>
-            <div class="card border-0 shadow bg-white">
+            <div class="card border-0 shadow bg-white mb-5">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-md-3 col-sm-6 overflow-hidden pe-2">
