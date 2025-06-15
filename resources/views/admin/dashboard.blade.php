@@ -11,7 +11,7 @@
                         <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
                             <div class="card-body w-100 px-0 admin-side-navigation">
                                 <ul class="ps-0 w-100">
-                                    <li class="text-capitalize fs-5 shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3 mb-2 cursor-pointer">
+                                    <li class="text-capitalize fs-5 shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3 cursor-pointer">
                                         <i class="bi bi-boxes me-2"></i>
                                         dashboard
                                     </li>
@@ -255,7 +255,7 @@
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-add-employees" role="tabpanel" aria-labelledby="nav-add-employees-tab" tabindex="0">
-                                            <x-admin-employee-management />
+                                            <x-admin-employee-management :working-designation="$workingDesignations" />
                                         </div>
                                     </div>
                                 </div>

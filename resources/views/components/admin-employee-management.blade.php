@@ -12,6 +12,7 @@
                         <option value="Mid-level">Mid-level</option>
                         <option value="Senior">Senior</option>
                         <option value="Lead">Lead</option>
+                        <option value="Manager">Manager</option>
                     </select>
                 </div>
                 <div class="col-md-4 px-2">
@@ -23,14 +24,18 @@
                     <input type="date" class="form-control shadow-none" name="employee-end-date">
                 </div>
                 <div class="col-md-12 my-2">
-                    <label for="employee-name" class="form-label text-capitalize">name</label>
-                    <input type="text" class="form-control shadow-none" name="employee-name">
-                </div>
-                <div class="col-md-12">
                     <label for="employee-designation" class="form-label text-capitalize">designation</label>
                     <select class="form-select shadow-none text-capitalize employee-designation" name="employee-designation">
-                        
+                        <option value="">Choose Designation</option>
+                        @foreach($workingDesignation as $designation)
+                        <option value="{{ $designation->designation }}">{{ $designation->designation }}</option>
+                        @endforeach
                     </select>
+                </div>
+                <h5 class="text-capitalize mt-2">personal details</h5>
+                <div class="col-md-12 my-2">
+                    <label for="employee-name" class="form-label text-capitalize">name</label>
+                    <input type="text" class="form-control shadow-none" name="employee-name">
                 </div>
             </div>
             <button type="submit" class="btn btn-success px-4 py-2">Save</button>

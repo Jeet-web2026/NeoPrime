@@ -19,8 +19,9 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
+        $workingDesignations = CareerVaccancy::select('designation')->get();
         $NewCallBack = CallbackRequest::count();
-        return view('admin.dashboard', compact('NewCallBack'));
+        return view('admin.dashboard', compact('NewCallBack', 'workingDesignations'));
     }
 
     public function GetLandingcontent()
@@ -360,12 +361,11 @@ class AdminController extends Controller
 
     public function FetchworkingDesignation()
     {
-        $data = CareerVaccancy::select('designation')->pluck('designation');
-        dd($data);
+        $workingdesignation = CareerVaccancy::all();
 
         return response()->json([
             'status' => 200,
-            'data' => $data
+            'data' => $workingdesignation
         ]);
     }
 }
