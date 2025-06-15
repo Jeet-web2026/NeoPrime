@@ -19,7 +19,7 @@
                             <h6 class="text-secondary">{!! Str::limit($data->description, 1000) !!}</h6>
                         </div>
                         <div class="col-md-12 mt-4">
-                            {!! $data->descriptionaditional->services_description !!}
+                            {!! $data->descriptionaditional->services_description ?? 'No Description here' !!}
                         </div>
                     </div>
                 </div>

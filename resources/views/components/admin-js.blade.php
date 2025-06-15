@@ -351,6 +351,7 @@
                 url: "{{ route('services') }}",
                 success: function(response) {
                     if (response.status == 200) {
+                        $('#all-services-add #service-name').empty();
                         $('#all-services-add #service-name').append(`
                                 <option class="text-capitalize">Choose Service</option>
                             `);
