@@ -44,7 +44,10 @@
                                 <li class="list-style-none text-capitalize text-light mb-2">tech stack</li>
                             </a>
                             <a href="" class="text-decoration-none">
-                                <li class="list-style-none text-capitalize text-light">portfolio</li>
+                                <li class="list-style-none text-capitalize text-light mb-2">portfolio</li>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <li class="list-style-none text-capitalize text-light">career</li>
                             </a>
                         </ul>
                     </div>

@@ -323,4 +323,23 @@ class AdminController extends Controller
             ]);
         }
     }
+
+    public function AddcareerVaccancy(Request $request)
+    {
+        $request->validate([
+            'designation-name' => 'required',
+            'salary-range' => 'required',
+            'start-date' => 'required',
+            'role-requirements' => 'required',
+            'job-description' => 'required'
+        ],[
+            'designation-name.required' => 'Designation is required!',
+            'salary-range.required' => 'Salary range is required!',
+            'start-date.required' => 'Start date is required!',
+            'role-requirements.required' => 'Role requirements is required!',
+            'job-description.required' => 'Description is required!',
+        ]);
+
+        
+    }
 }

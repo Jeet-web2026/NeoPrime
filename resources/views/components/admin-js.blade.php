@@ -57,6 +57,8 @@
         navgationSetup(0);
         navgationSetup(1);
         navgationSetup(2);
+        navgationSetup(3);
+        navgationSetup(4);
 
         $(document).on('submit', '#landing-content-form', function(e) {
             e.preventDefault();
@@ -415,5 +417,12 @@
             });
         }
         addServicesDescription();
+
+        $(this).on('submit', '#career-vacancy', function(e){
+            e.preventDefault();
+            $.post({
+                
+            });
+        });
     });
 </script>

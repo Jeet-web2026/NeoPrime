@@ -23,6 +23,14 @@
                                         <i class="bi bi-gear me-2"></i>
                                         services
                                     </li>
+                                    <li class="text-capitalize fs-5 text-light shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3">
+                                        <i class="bi bi-clipboard2-data-fill me-2"></i>
+                                        career
+                                    </li>
+                                    <li class="text-capitalize fs-5 text-light shadow-sm w-100 d-flex justify-content-start align-items-center p-2 rounded-3">
+                                        <i class="bi bi-person-badge me-2"></i>
+                                        employee
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -224,6 +232,30 @@
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-our-services" role="tabpanel" aria-labelledby="nav-our-services-tab" tabindex="0">
                                             <x-admin-services-tab />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border-0 bg-transparent component">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-add-employees-tab" data-bs-toggle="tab" data-bs-target="#nav-add-employees" type="button" role="tab" aria-controls="nav-add-employees" aria-selected="true">Current Vaccancy</button>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-add-employees" role="tabpanel" aria-labelledby="nav-add-employees-tab" tabindex="0">
+                                            <x-admin-career-management />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border-0 bg-transparent component">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-add-employees-tab" data-bs-toggle="tab" data-bs-target="#nav-add-employees" type="button" role="tab" aria-controls="nav-add-employees" aria-selected="true">Add Employee</button>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-add-employees" role="tabpanel" aria-labelledby="nav-add-employees-tab" tabindex="0">
+                                            <x-admin-employee-management />
                                         </div>
                                     </div>
                                 </div>

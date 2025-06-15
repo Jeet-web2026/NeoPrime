@@ -33,6 +33,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('admin-dashboard/blogs-add', 'BlogsAdd')->name('blogs-add');
         Route::get('admin-dashboard/services', 'ServicesShow')->name('services');
         Route::post('admin-dashboard/add-services-description', 'ServicesDescription')->name('services-description');
+        Route::post('admin-dashboard/add-career-vacancy', 'AddcareerVaccancy')->name('add-career-vacancy');
     });
 });
 
