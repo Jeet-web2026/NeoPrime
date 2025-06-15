@@ -437,7 +437,7 @@
                     form.trigger('reset');
 
                     setTimeout(() => {
-                         $(document).find('.career-vacancy-created-result .btn-close').click();
+                        $(document).find('.career-vacancy-created-result .btn-close').click();
                     }, 2000);
                 }
             });
