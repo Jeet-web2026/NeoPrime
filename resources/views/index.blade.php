@@ -10,7 +10,7 @@
                             <h1 class="text-capitalize fw-bold text-light lh-sm">{{ $FetchLandingContent->main_heading }}</h1>
                             <div class="d-flex justify-content-start align-items-center mt-4">
                                 <a href="javascript:void(0)" class="btn shadow-sm border-0 text-light text-capitalize contact-now px-4 py-2 me-3">get contact now<i class="bi bi-phone-flip ms-2"></i></a>
-                                <a href="javascript:void(0)" class="text-capitalize text-decoration-none view-services btn btn-outline-light rounded px-4 py-2">view services<i class="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                                <a href="{{ route('all-services') }}" class="text-capitalize text-decoration-none view-services btn btn-outline-light rounded px-4 py-2">view services<i class="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                             <div class="row mt-5 w-50 align-items-center">
                                 <div class="col-md-6 pe-1">

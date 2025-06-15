@@ -1,4 +1,4 @@
-<x-MainLayout subheading="View Services" bootstrap="active" bIcons="active">
+<x-MainLayout subheading="View Services" bootstrap="active" bIcons="active" jQuery="active">
     <main class="h-100 w-100" style="padding-top: 22vh;">
         <div class="container">
             <h2 class="text-center text-black fs-3 fw-bold text-uppercase">{{ $data->name }}</h2>
