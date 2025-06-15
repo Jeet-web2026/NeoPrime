@@ -11,9 +11,4 @@ class ServiceDescription extends Model
         'services_id',
         'services_description'
     ];
-
-    public function services()
-    {
-        return $this->hasOne(OurServices::class, 'id', 'services_id');
-    }
 }

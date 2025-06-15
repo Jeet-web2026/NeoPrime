@@ -12,4 +12,9 @@ class OurServices extends Model
         'image',
         'description'
     ];
+
+    public function descriptionaditional()
+    {
+        return $this->hasOne(ServiceDescription::class, 'services_id', 'id');
+    }
 }
