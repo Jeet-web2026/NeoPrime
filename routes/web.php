@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\WhatweofferController;
@@ -55,6 +56,11 @@ Route::controller(BlogController::class)->group(function () {
 Route::controller(ServicesController::class)->group(function () {
     Route::get('all-services', 'AllServices')->name('all-services');
     Route::get('service/{id}', 'ViewServices')->name('view-service');
+});
+
+Route::controller(CareerController::class)->group(function () {
+    Route::get('career', 'careerVacancy')->name('career-view');
+    Route::get('career/job-details/{id}', 'JobView')->name('job-view');
 });
 
 Route::fallback(function () {

@@ -46,7 +46,7 @@
                             <a href="" class="text-decoration-none">
                                 <li class="list-style-none text-capitalize text-light mb-2">portfolio</li>
                             </a>
-                            <a href="" class="text-decoration-none">
+                            <a href="{{ route('career-view') }}" class="text-decoration-none">
                                 <li class="list-style-none text-capitalize text-light">career</li>
                             </a>
                         </ul>
