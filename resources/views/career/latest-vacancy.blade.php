@@ -1,11 +1,20 @@
 <x-MainLayout subheading="Careers" bootstrap="active" bIcons="active" jQuery="active">
     <main class="h-100 w-100 pb-5" style="padding-top: 25vh;">
         <div class="container">
-            <h3 class="text-center text-uppercase text-black fw-bold fs-2 mb-5">our current openings</h3>
+            <h3 class="text-center text-uppercase text-black fw-bold fs-2 mb-2">our current openings</h3>
+            <div class="d-flex justify-content-center align-items-center">
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item"><a href="" class="text-decoration-none">Quick Links</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Current Openings</li>
+                    </ol>
+                </nav>
+            </div>
             <div class="row">
                 @forelse($openings as $opening)
                 <div class="col-md-6 mb-3 {{ $loop->even ? 'ps-1' : 'pe-1' }}">
-                    <div class="card shadow border">
+                    <div class="card shadow border p-2">
                         <div class="card-body">
                             <h5 class="card-title text-capitalize text-black fs-5 mb-3">{{ $opening->designation }}</h5>
                             <p class="card-text text-capitalize mb-1">salary : {{ $opening->salary_range }}</p>

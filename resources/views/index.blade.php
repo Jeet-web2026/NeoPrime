@@ -772,8 +772,8 @@
     </script>
     @endsection
 
-    @section('extracsscdns')
+    @section('extrajscdns')
     <script src="https://www.google.com/recaptcha/api.js?render=6LcYr2ErAAAAAP5eHID-6M5D_btm3GCKylIdm1lr"></script>
-
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     @endsection
 </x-MainLayout>
