@@ -52,9 +52,8 @@
                                             <option value="E-commerce">E-commerce</option>
                                         </select>
                                     </div>
-                                    <button data-sitekey="6LcYr2ErAAAAAP5eHID-6M5D_btm3GCKylIdm1lr"
-                                        data-callback='onSubmit'
-                                        data-action='submit' class="btn border-0 shadow-sm enquiry-btn text-light g-recaptcha">Enquire Now<i class="bi bi-arrow-right ms-2"></i></button>
+                                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                                    <button type="submit" class="btn border-0 shadow-sm enquiry-btn text-light ">Enquire Now<i class="bi bi-arrow-right ms-2"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -737,20 +736,35 @@
             });
             $(document).on('submit', '#callback-request-form', function(e) {
                 e.preventDefault();
-                $.post({
-                    url: "{{ route('callback-request') }}",
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        $(document).find('.callback-request-form-result').html(`
-                            <div class="alert alert-success" role="alert">
-                                 ${response.message}
-                            </div>                        
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LcYr2ErAAAAAP5eHID-6M5D_btm3GCKylIdm1lr', {
+                        action: 'submit'
+                    }).then(function(token) {
+                        $('#g-recaptcha-response').val(token);
+                        $.post({
+                            url: "{{ route('callback-request') }}",
+                            data: $('#callback-request-form').serialize(),
+                            success: function(response) {
+                                $('.callback-request-form-result').html(`
+                            <div class="alert alert-success">${response.message}</div>
                         `);
-                        $(document).find('#callback-request-form')[0].reset();
-                        setTimeout(() => {
-                            $(document).find('.alert').remove();
-                        }, 3000);
-                    }
+                                $('#callback-request-form')[0].reset();
+                                setTimeout(() => $('.alert').remove(), 3000);
+                            },
+                            error: function(xhr) {
+                                let message = 'Something went wrong.';
+                                if (xhr.responseJSON?.errors) {
+                                    message = Object.values(xhr.responseJSON.errors).map(err => `<div>${err}</div>`).join('');
+                                } else if (xhr.responseJSON?.message) {
+                                    message = xhr.responseJSON.message;
+                                }
+
+                                $('.callback-request-form-result').html(`
+                            <div class="alert alert-danger">${message}</div>
+                        `);
+                            }
+                        });
+                    });
                 });
             });
             $(this).find('.popular-services .icon').addClass('fs-2');
@@ -759,6 +773,7 @@
     @endsection
 
     @section('extracsscdns')
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcYr2ErAAAAAP5eHID-6M5D_btm3GCKylIdm1lr"></script>
+
     @endsection
 </x-MainLayout>
