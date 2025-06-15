@@ -420,6 +420,7 @@
 
         $(this).on('submit', '#career-vacancy', function(e) {
             e.preventDefault();
+            let form = $(this);
             $.post({
                 url: "{{ route('add-career-vacancy') }}",
                 data: $(this).serialize(),
@@ -432,6 +433,12 @@
                     </div>
                     
                     `);
+
+                    form.trigger('reset');
+
+                    setTimeout(() => {
+                         $(document).find('.career-vacancy-created-result .btn-close').click();
+                    }, 2000);
                 }
             });
         });
