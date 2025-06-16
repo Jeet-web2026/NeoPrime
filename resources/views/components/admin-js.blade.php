@@ -478,5 +478,12 @@
                 }
             });
         });
+
+        $(this).on('submit', '#employee-manage-form', function(e){
+            e.preventDefault();
+            $.post({
+                url: "{{ route('add-employee-details') }}"
+            });
+        });
     });
 </script>

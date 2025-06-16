@@ -2,7 +2,7 @@
     <div class="card-body">
         <form id="employee-manage-form">
             <div class="row mb-3">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="employee-position" class="form-label text-capitalize">choose position</label>
                     <select class="form-select shadow-none text-capitalize" name="employee-position">
                         <option value="">Choose Position</option>
@@ -15,13 +15,9 @@
                         <option value="Manager">Manager</option>
                     </select>
                 </div>
-                <div class="col-md-4 px-2">
+                <div class="col-md-6 ps-2">
                     <label for="employee-start-date" class="form-label text-capitalize">start date</label>
                     <input type="date" class="form-control shadow-none" name="employee-start-date">
-                </div>
-                <div class="col-md-4">
-                    <label for="employee-end-date" class="form-label text-capitalize">end date</label>
-                    <input type="date" class="form-control shadow-none" name="employee-end-date">
                 </div>
                 <div class="col-md-12 my-2">
                     <label for="employee-designation" class="form-label text-capitalize">designation</label>
@@ -47,17 +43,42 @@
                 </div>
                 <div class="col-md-6 pe-1 mt-2">
                     <label for="employee-age" class="form-label text-capitalize">age</label>
-                    <input type="text" class="form-control shadow-none" name="employee-age">
+                    <input type="number" class="form-control shadow-none" name="employee-age">
                 </div>
                 <div class="col-md-6 ps-1 mt-2">
                     <label for="employee-country" class="form-label text-capitalize">contry</label>
-                    <select class="form-select shadow-none text-capitalize employee-country" name="employee-country">      
+                    <select class="form-select shadow-none text-capitalize employee-country" name="employee-country">
                     </select>
                 </div>
                 <div class="col-md-12 my-2">
                     <label for="employee-city" class="form-label text-capitalize">city</label>
-                    <select class="form-select shadow-none text-capitalize employee-city" name="employee-city">                        
+                    <select class="form-select shadow-none text-capitalize employee-city" name="employee-city">
                     </select>
+                </div>
+                <h5 class="text-capitalize mt-2">professional details</h5>
+                <div class="col-md-12 my-2">
+                    <label for="employee-joining-date" class="form-label text-capitalize">joining date</label>
+                    <input type="date" class="form-control shadow-none" name="employee-joining-date">
+                </div>
+                <div class="col-md-6 pe-1 mt-2">
+                    <label for="employee-prevoius-employeer" class="form-label text-capitalize">prevoius employeer name</label>
+                    <input type="text" class="form-control shadow-none" name="employee-prevoius-employeer">
+                </div>
+                <div class="col-md-6 ps-1 mt-2">
+                    <label for="employee-last-withdrawn-salary" class="form-label text-capitalize">last withdrawn salary</label>
+                    <input type="text" class="form-control shadow-none" name="employee-last-withdrawn-salary">
+                </div>
+                <div class="col-md-6 pe-1 mt-2">
+                    <label for="employee-prevoius-designation" class="form-label text-capitalize">prevoius designation</label>
+                    <input type="text" class="form-control shadow-none" name="employee-prevoius-designation">
+                </div>
+                <div class="col-md-6 ps-1 mt-2">
+                    <label for="employee-last-location" class="form-label text-capitalize">location</label>
+                    <input type="text" class="form-control shadow-none" name="employee-last-location">
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="employee-last-years-of-working" class="form-label text-capitalize">years of working</label>
+                    <input type="text" class="form-control shadow-none" name="employee-last-years-of-working">
                 </div>
             </div>
             <button type="submit" class="btn btn-success px-4 py-2">Save</button>

@@ -368,4 +368,46 @@ class AdminController extends Controller
             'data' => $workingdesignation
         ]);
     }
+
+    public function AddEmployeeDetails(Request $request)
+    {
+        $request->validate([
+            'employee-position' => 'required|string',
+            'employee-start-date' => 'date|required',
+            'employee-designation' => 'required|string',
+            'employee-name' => 'required',
+            'employee-contact-number' => 'required|digits:10',
+            'employee-email-id' => 'email|required',
+            'employee-age' => 'integer|required',
+            'employee-country' => 'required|string',
+            'employee-city' => 'required|string',
+            'employee-joining-date' => 'required|date',
+            'employee-prevoius-employeer' => 'required',
+            'employee-last-withdrawn-salary' => 'required',
+            'employee-prevoius-designation' => 'required',
+            'employee-last-location' => 'required',
+            'employee-last-years-of-working' => 'required'
+        ], [
+            'employee-position.required' => 'Position is required',
+            'employee-start-date.date' => 'Start date not a valid date.',
+            'employee-start-date.required' => 'Start date is required',
+            'employee-designation.required' => 'esignation is required',
+            'employee-name.required' => 'Employee name is required!',
+            'employee-contact-number.digits' => 'Contact number should be 10 characters long!',
+            'employee-contact-number.required' => 'Contact number is required!',
+            'employee-email-id.required' => 'Email id is required!',
+            'employee-email-id.email' => 'email id should be a valid email format.',
+            'employee-age.required' => 'Age is mandatory',
+            'employee-age.integer' => 'Age should be a number',
+            'employee-country.required' => 'Country is required',
+            'employee-city.required' => 'City is required',
+            'employee-joining-date.required' => 'Joining date is required',
+            'employee-joining-date.date' => 'Please provide a valide date.',
+            'employee-prevoius-employeer.required' => 'Prevoius employer is required',
+            'employee-last-withdrawn-salary.required' => 'Last withdrawn salary is required',
+            'employee-prevoius-designation.required' => 'Prevoius designation is required',
+            'employee-last-location.required' => 'Previous location is required',
+            'employee-last-years-of-working.required' => 'Total years of working required'
+        ]);
+    }
 }
