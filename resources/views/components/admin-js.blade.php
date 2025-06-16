@@ -504,7 +504,15 @@
                     if (xhr.responseJSON && xhr.responseJSON.message) {
                         message = xhr.responseJSON.message;
                     }
-                    alert(message);
+                    form.find('.status-employee-manage-form').html(`
+                        <div class="alert alert-danger" role="alert">
+                            ${message}
+                        </div>                        
+                        `);
+
+                    setTimeout(() => {
+                        form.find('.alert').remove();
+                    }, 2000);
                 }
             });
         });
