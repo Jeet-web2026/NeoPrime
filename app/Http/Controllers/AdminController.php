@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\AddEmployee;
 use App\Models\Blogs;
 use App\Models\CallbackRequest;
 use App\Models\CareerVaccancy;
@@ -409,5 +410,43 @@ class AdminController extends Controller
             'employee-last-location.required' => 'Previous location is required',
             'employee-last-years-of-working.required' => 'Total years of working required'
         ]);
+
+        $matchData = [
+            'position' => $request['employee-position'],
+            'start_date' => $request['employee-start-date'],
+            'designation' => $request['employee-designation'],
+            'name' => $request['employee-name'],
+            'contact_no' => $request['employee-contact-number'],
+            'email' => $request['employee-email-id'],
+            'age' => $request['employee-age'],
+            'country' => $request['employee-country'],
+            'city' => $request['employee-city'],
+            'prevoius_joining_date' => $request['employee-joining-date'],
+            'prevoius_employeer' => $request['employee-prevoius-employeer'],
+            'last_withdran_salary' => $request['employee-last-withdrawn-salary'],
+            'prevoius_designation' => $request['employee-prevoius-designation'],
+            'prevoius_location' => $request['employee-last-location'],
+            'total_years_of_working' => $request['employee-last-years-of-working']
+        ];
+
+        $result = AddEmployee::updateOrCreate(
+            [
+                'contact_no' => $request['employee-contact-number'],
+                'email' => $request['employee-email-id'],
+            ],
+            $matchData
+        );
+
+        if ($result) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Employee added to our team.'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Something went wrong!'
+            ]);
+        }
     }
 }

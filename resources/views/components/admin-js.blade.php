@@ -479,10 +479,33 @@
             });
         });
 
-        $(this).on('submit', '#employee-manage-form', function(e){
+        $(this).on('submit', '#employee-manage-form', function(e) {
             e.preventDefault();
+            let form = $(this);
             $.post({
-                url: "{{ route('add-employee-details') }}"
+                url: "{{ route('add-employee-details') }}",
+                data: $(this).serialize(),
+                success: function(response) {
+                    form.trigger('reset');
+                    if (response.status == 200) {
+                        form.find('.status-employee-manage-form').html(`
+                        <div class="alert alert-success" role="alert">
+                            ${response.message}
+                        </div>                        
+                        `);
+
+                        setTimeout(() => {
+                            form.find('.alert').remove();
+                        }, 2000);
+                    }
+                },
+                error: function(xhr) {
+                    let message = "Something went wrong!"
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        message = xhr.responseJSON.message;
+                    }
+                    alert(message);
+                }
             });
         });
     });

@@ -1,7 +1,9 @@
 <div class="card border-0 shadow">
     <div class="card-body">
         <form id="employee-manage-form">
+            @csrf
             <div class="row mb-3">
+                <div class="col-md-12 status-employee-manage-form"></div>
                 <div class="col-md-6">
                     <label for="employee-position" class="form-label text-capitalize">choose position</label>
                     <select class="form-select shadow-none text-capitalize" name="employee-position">
