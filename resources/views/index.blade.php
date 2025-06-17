@@ -136,7 +136,7 @@
                     <li class="text-capitalize text-truncate" style="width: 485px;"><i class="bi bi-check2-square me-2 text-primary"></i>{{ $FetchAboutUsContent->about_third_point }}</li>
                 </ul>
                 <div class="d-flex align-items-center w-100">
-                    <a href="javascript:void(0)" class="btn hire-us px-4 py-2 text-capitalize text-light me-3">hire our experts<i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="{{ route('all-experts-view') }}" class="btn hire-us px-4 py-2 text-capitalize text-light me-3">hire our experts<i class="bi bi-arrow-right ms-2"></i></a>
                     <div class="row">
                         <div class="col">
                             <div class="card border-0 bg-transparent">
