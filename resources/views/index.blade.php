@@ -9,7 +9,7 @@
                         <div class="mt-5">
                             <h1 class="text-capitalize fw-bold text-light lh-sm">{{ $FetchLandingContent->main_heading }}</h1>
                             <div class="d-flex justify-content-start align-items-center mt-4">
-                                <a href="javascript:void(0)" class="btn shadow-sm border-0 text-light text-capitalize contact-now px-4 py-2 me-3">get contact now<i class="bi bi-phone-flip ms-2"></i></a>
+                                <a href="mailto:jeetnath2110@gmail.com" class="btn shadow-sm border-0 text-light text-capitalize contact-now px-4 py-2 me-3">get contact now<i class="bi bi-phone-flip ms-2"></i></a>
                                 <a href="{{ route('all-services') }}" class="text-capitalize text-decoration-none view-services btn btn-outline-light rounded px-4 py-2">view services<i class="bi bi-box-arrow-in-up-right ms-2"></i></a>
                             </div>
                             <div class="row mt-5 w-50 align-items-center">
@@ -239,14 +239,15 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 pe-2">
+                                @foreach($fetchEmployees->slice(0, 2) as $employee)
+                                <div class="col-md-6 {{ $loop->first ? 'pe-2' : 'ps-2' }}">
                                     <div class="card border-0 bg-transparent">
-                                        <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <img src="{{ $employee->employee_profile }}" class="rounded-2" alt="...">
                                         <div class="card-body px-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
-                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">{{ $employee->name }}</h5>
+                                                    <p class="text-capitalize text-secondary">{{ $employee->designation }}</p>
                                                 </div>
                                                 <div>
                                                     <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
@@ -255,34 +256,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 ps-2">
-                                    <div class="card border-0 bg-transparent">
-                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
-                                        <div class="card-body px-0">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
-                                                    <p class="text-capitalize text-secondary">web developer</p>
-                                                </div>
-                                                <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-6 ps-2">
                             <div class="row">
-                                <div class="col-md-6 pe-2">
+                                @foreach($fetchEmployees->slice(2, 3) as $employee)
+                                <div class="col-md-6  {{ $loop->odd ? 'pe-2' : 'ps-2' }}">
                                     <div class="card border-0 bg-transparent">
-                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
+                                        <img src="{{ $employee->employee_profile }}" class="rounded-2" alt="...">
                                         <div class="card-body px-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
-                                                    <p class="text-capitalize text-secondary">web developer</p>
+                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">{{ $employee->name }}</h5>
+                                                    <p class="text-capitalize text-secondary">{{ $employee->designation }}</p>
                                                 </div>
                                                 <div>
                                                     <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
@@ -291,38 +278,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 ps-2">
-                                    <div class="card border-0 bg-transparent">
-                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
-                                        <div class="card-body px-0">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
-                                                    <p class="text-capitalize text-secondary">web developer</p>
-                                                </div>
-                                                <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pe-2">
-                                    <div class="card border-0 bg-transparent">
-                                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?uid=R126305893&ga=GA1.1.1378415623.1732413357&semt=ais_hybrid&w=740" class="rounded-2" alt="...">
-                                        <div class="card-body px-0">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h5 class="text-capitalize fs-5 text-black mb-1 fw-semibold">example</h5>
-                                                    <p class="text-capitalize text-secondary">web developer</p>
-                                                </div>
-                                                <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                                 <div class="col-md-6">
                                     <div class="card border-0 bg-transparent h-100">
                                         <div class="card-body d-flex justify-content-center align-items-center">

@@ -21,6 +21,7 @@ class AddEmployee extends Model
         'last_withdran_salary',
         'prevoius_designation',
         'prevoius_location',
-        'total_years_of_working'
+        'total_years_of_working',
+        'employee_profile'
     ];
 }

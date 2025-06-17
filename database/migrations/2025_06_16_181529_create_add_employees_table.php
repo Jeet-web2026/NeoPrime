@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('prevoius_designation');
             $table->string('prevoius_location');
             $table->string('total_years_of_working');
+            $table->string('employee_profile');
             $table->timestamps();
         });
     }

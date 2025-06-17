@@ -387,7 +387,8 @@ class AdminController extends Controller
             'employee-last-withdrawn-salary' => 'required',
             'employee-prevoius-designation' => 'required',
             'employee-last-location' => 'required',
-            'employee-last-years-of-working' => 'required'
+            'employee-last-years-of-working' => 'required',
+            'employee-profile' => 'required'
         ], [
             'employee-position.required' => 'Position is required',
             'employee-start-date.date' => 'Start date not a valid date.',
@@ -408,7 +409,8 @@ class AdminController extends Controller
             'employee-last-withdrawn-salary.required' => 'Last withdrawn salary is required',
             'employee-prevoius-designation.required' => 'Prevoius designation is required',
             'employee-last-location.required' => 'Previous location is required',
-            'employee-last-years-of-working.required' => 'Total years of working required'
+            'employee-last-years-of-working.required' => 'Total years of working required',
+            'employee-profile.required' => 'Profile is required'
         ]);
 
         $matchData = [
@@ -426,7 +428,8 @@ class AdminController extends Controller
             'last_withdran_salary' => $request['employee-last-withdrawn-salary'],
             'prevoius_designation' => $request['employee-prevoius-designation'],
             'prevoius_location' => $request['employee-last-location'],
-            'total_years_of_working' => $request['employee-last-years-of-working']
+            'total_years_of_working' => $request['employee-last-years-of-working'],
+            'employee_profile' => $request['employee-profile']
         ];
 
         $result = AddEmployee::updateOrCreate(

@@ -8,13 +8,13 @@
                     <label for="employee-position" class="form-label text-capitalize">choose position</label>
                     <select class="form-select shadow-none text-capitalize" name="employee-position">
                         <option value="">Choose Position</option>
-                        <option value="Intern">Intern</option>
-                        <option value="Associate">Associate</option>
-                        <option value="Beginer">Beginer</option>
-                        <option value="Mid-level">Mid-level</option>
-                        <option value="Senior">Senior</option>
-                        <option value="Lead">Lead</option>
-                        <option value="Manager">Manager</option>
+                        <option value="1">Intern</option>
+                        <option value="2">Associate</option>
+                        <option value="3">Beginer</option>
+                        <option value="4">Mid-level</option>
+                        <option value="5">Senior</option>
+                        <option value="6">Lead</option>
+                        <option value="7">Manager</option>
                     </select>
                 </div>
                 <div class="col-md-6 ps-2">
@@ -81,6 +81,10 @@
                 <div class="col-md-12 mt-2">
                     <label for="employee-last-years-of-working" class="form-label text-capitalize">years of working</label>
                     <input type="text" class="form-control shadow-none" name="employee-last-years-of-working">
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="employee-profile" class="form-label text-capitalize">profile</label>
+                    <input type="text" class="form-control shadow-none" name="employee-profile">
                 </div>
             </div>
             <button type="submit" class="btn btn-success px-4 py-2">Save</button>
