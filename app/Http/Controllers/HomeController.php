@@ -29,7 +29,7 @@ class HomeController extends Controller
             $blog->short_description = implode(' ', array_slice($words, 0, 8));
             return $blog;
         });
-        $fetchEmployees = AddEmployee::select('employee_profile', 'designation', 'name')->orderBy('position', 'desc')->orderBy('total_years_of_working', 'desc')->limit(5)->get();
+        $fetchEmployees = AddEmployee::select('employee_profile', 'designation', 'name', 'id')->orderBy('position', 'desc')->orderBy('total_years_of_working', 'desc')->limit(5)->get();
         return view('index', compact('FetchLandingContent', 'FetchWhatweoffer', 'FetchAboutUsContent', 'Part', 'FetchPopularServices', 'FetchLatestVideoContent', 'FetchBlog', 'fetchEmployees'));
     }
 

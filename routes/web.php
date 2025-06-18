@@ -67,6 +67,7 @@ Route::controller(CareerController::class)->group(function () {
 
 Route::controller(EmployeeController::class)->group(function () {
     Route::get('all-experts', 'index')->name('all-experts-view');
+    Route::get('our-experts/{id}', 'PerExpert')->name('per-expert');
 });
 
 Route::fallback(function () {

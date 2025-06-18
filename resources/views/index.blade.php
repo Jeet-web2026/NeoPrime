@@ -250,7 +250,7 @@
                                                     <p class="text-capitalize text-secondary">{{ $employee->designation }}</p>
                                                 </div>
                                                 <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
+                                                    <a href="{{ route('per-expert', $employee->id) }}" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                                     <p class="text-capitalize text-secondary">{{ $employee->designation }}</p>
                                                 </div>
                                                 <div>
-                                                    <a href="javascript:void(0)" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
+                                                    <a href="{{ route('per-expert', $employee->id) }}" class="btn shadow-none text-black fs-5 border rounded-circle"><i class="bi bi-plus-lg"></i></a>
                                                 </div>
                                             </div>
                                         </div>
