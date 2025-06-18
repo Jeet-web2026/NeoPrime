@@ -282,7 +282,7 @@
                                 <div class="col-md-6">
                                     <div class="card border-0 bg-transparent h-100">
                                         <div class="card-body d-flex justify-content-center align-items-center">
-                                            <a href="javascript:void(0)" class="btn shadow-none text-light border-0 text-capitalize" style="background-color: #5404f5;">view more members</a>
+                                            <a href="{{ route('all-experts-view') }}" class="btn shadow-none text-light border-0 text-capitalize" style="background-color: #5404f5;">view more members</a>
                                         </div>
                                     </div>
                                 </div>
