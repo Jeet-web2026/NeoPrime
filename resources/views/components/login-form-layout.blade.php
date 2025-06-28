@@ -1,5 +1,5 @@
 @props(['login' => '', 'loginsubheading' => ''])
-<x-SecondLayout bootstrap="active" subheading="{{ $loginsubheading }}">
+<x-SecondLayout bootstrap="active" subheading="{{ $loginsubheading }}" jQuery="true">
     <main @if($login) id="{{ $login }}-login" @endif class="container-fluid vh-100 d-flex justify-content-center align-items-center">
         @if($login == 'admin' || $login == 'partner')
         <div class="card shadow border-0 w-50 p-2">
@@ -53,44 +53,72 @@
         <div class="card shadow border-0 w-50 p-3">
             <div class="card-body">
                 <h2 class="text-uppercase fw-semibold text-center mb-4 mt-2">client's register portal</h2>
-                <form action="{{ route($login .'-verify') }}" class="row g-3">
-                    <div class="col-md-12">
+                <form action="{{ route($login .'-verify') }}" class="row g-3" method="POST">
+                    @csrf
+                    <div class="col-md-6 pe-1">
                         <label for="{{ $login }}-email" class="form-label text-black">Email</label>
-                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
+                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email" placeholder="e.g. example@gmail.com">
+                        @error($login . '-email')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="col-md-6 ps-1">
+                        <label for="{{ $login }}-name" class="form-label text-black">Name</label>
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-name" name="{{ $login }}-name" placeholder="e.g. xyz organisation">
+                        @error($login . '-name')
+                        {{ $message }}
+                        @enderror
                     </div>
                     <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <label for="{{ $login }}-address" class="form-label text-black">Address</label>
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address" name="{{ $login }}-address" placeholder="1234 Main St">
+                        @error($login . '-address')
+                        {{ $message }}
+                        @enderror
                     </div>
                     <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        <label for="{{ $login }}-address-second" class="form-label text-black">Address 2</label>
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address-second" name="{{ $login }}-address-second" placeholder="Apartment, studio, or floor">
+                        @error($login . '-address-second')
+                        {{ $message }}
+                        @enderror
                     </div>
-                    <div class="col-md-6">
-                        <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                    <div class="col-md-4">
+                        <label for="{{ $login }}-country" class="form-label text-black">Country</label>
+                        <select id="{{ $login }}-country" name="{{ $login }}-country" class="form-select shadow-none text-black">
+                        </select>
+                        @error($login . '-country')
+                        {{ $message }}
+                        @enderror
                     </div>
-                    <div class="col-md-4 px-2">
-                        <label for="inputState" class="form-label">State</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
+                    <div class="col-md-3 ps-2">
+                        <label for="{{ $login }}-state" class="form-label text-black">State</label>
+                        <select id="{{ $login }}-state" name="{{ $login }}-state" class="form-select shadow-none text-black">
+                            <option value="">Choose State</option>
+                        </select>
+                        @error($login . '-state')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="col-md-3 px-2">
+                        <label for="{{ $login }}-city" class="form-label text-black">City</label>
+                        <select id="{{ $login }}-city" name="{{ $login }}-city" class="form-select shadow-none text-black">
+                            <option selected>Choose city</option>
                             <option>...</option>
                         </select>
+                        @error($login . '-city')
+                        {{ $message }}
+                        @enderror
                     </div>
                     <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <label for="{{ $login }}-zip" class="form-label text-black">Zip</label>
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-zip" name="{{ $login }}-zip">
+                        @error($login . '-zip')
+                        {{ $message }}
+                        @enderror
                     </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-primary shadow-none border-0 px-4 py-2">Register</button>
                     </div>
                 </form>
             </div>
