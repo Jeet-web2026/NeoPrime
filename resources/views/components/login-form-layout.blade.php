@@ -1,6 +1,6 @@
 @props(['login' => '', 'loginsubheading' => ''])
 <x-SecondLayout bootstrap="active" subheading="{{ $loginsubheading }}">
-    <main @if($login) id="{{ $login }}-login" @endif class="container-fluid d-flex justify-content-center align-items-center">
+    <main @if($login) id="{{ $login }}-login" @endif class="container-fluid vh-100 d-flex justify-content-center align-items-center">
         @if($login == 'admin' || $login == 'partner')
         <div class="card shadow border-0 w-50 p-2">
             <div class="card-body">
@@ -50,14 +50,15 @@
             </div>
         </div>
         @elseif($login == 'client')
-        <div class="card shadow border-0 w-75 h-75">
+        <div class="card shadow border-0 w-75">
             <div class="card-body">
-                <form class="row g-3">
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
+                <h2 class="text-uppercase fw-semibold text-center mb-4 mt-2">client's register portal</h2>
+                <form action="{{ route($login .'-verify') }}" class="row g-3">
+                    <div class="col-md-6 pe-1">
+                        <label for="{{ $login }}-email" class="form-label text-black">Email</label>
+                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 ps-1">
                         <label for="inputPassword4" class="form-label">Password</label>
                         <input type="password" class="form-control" id="inputPassword4">
                     </div>
@@ -73,7 +74,7 @@
                         <label for="inputCity" class="form-label">City</label>
                         <input type="text" class="form-control" id="inputCity">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 px-2">
                         <label for="inputState" class="form-label">State</label>
                         <select id="inputState" class="form-select">
                             <option selected>Choose...</option>
@@ -93,7 +94,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </form>
             </div>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminVerifyRequest;
-use App\Models\AdminVerify;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,5 +34,10 @@ class AuthenticationController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         return redirect()->route('admin-login')->with('success', 'Logged out successfully');
+    }
+
+    public function ClientsLogin()
+    {
+        return view('client.client-login');
     }
 }

@@ -18,7 +18,9 @@ Route::post('callback-request', [HomeController::class, 'callbackRequest'])->nam
 Route::controller(AuthenticationController::class)->group(function () {
     Route::redirect('login', 'home')->name('login');
     Route::get('admin-login', 'AdminLogin')->name('admin-login');
+    Route::get('client-register', 'ClientsLogin')->name('client-login');
     Route::post('admin-verify', 'AdminVerify')->name('admin-verify');
+    Route::post('client-verify', 'ClientVerify')->name('client-verify');
     Route::post('admin-logout', 'AdminLogout')->name('admin-logout');
 });
 
