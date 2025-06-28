@@ -50,17 +50,13 @@
             </div>
         </div>
         @elseif($login == 'client')
-        <div class="card shadow border-0 w-75">
+        <div class="card shadow border-0 w-50 p-3">
             <div class="card-body">
                 <h2 class="text-uppercase fw-semibold text-center mb-4 mt-2">client's register portal</h2>
                 <form action="{{ route($login .'-verify') }}" class="row g-3">
-                    <div class="col-md-6 pe-1">
+                    <div class="col-md-12">
                         <label for="{{ $login }}-email" class="form-label text-black">Email</label>
                         <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email">
-                    </div>
-                    <div class="col-md-6 ps-1">
-                        <label for="inputPassword4" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
                     </div>
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Address</label>
