@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminVerifyRequest;
+use App\Http\Requests\ClientRegisterRequest;
+use App\Models\ClientRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthenticationController extends Controller
 {
@@ -39,5 +42,25 @@ class AuthenticationController extends Controller
     public function ClientsLogin()
     {
         return view('client.client-login');
+    }
+
+    public function ClientVerify(ClientRegisterRequest $request)
+    {
+        $request->validated();
+
+        $matchData = [
+            'email' => $request['client-email'],
+            'name' => $request['client-name'],
+            'address' => $request['client-address'],
+            'address_second' => $request['client-address-second'],
+            'country' => $request['client-country'],
+            'state' => $request['client-state'],
+            'city' => $request['client-city'],
+            'pincode' => $request['client-zip']
+        ];
+
+        ClientRegister::create($matchData);
+
+        return back()->with('success', 'Registered Successfully!');
     }
 }

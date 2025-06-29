@@ -50,37 +50,49 @@
             </div>
         </div>
         @elseif($login == 'client')
-        <div class="card shadow border-0 w-50 p-3">
+        <div class="card shadow border-0 w-75 p-3">
             <div class="card-body">
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <h2 class="text-uppercase fw-semibold text-center mb-4 mt-2">client's register portal</h2>
                 <form action="{{ route($login .'-verify') }}" class="row g-3" method="POST">
                     @csrf
                     <div class="col-md-6 pe-1">
                         <label for="{{ $login }}-email" class="form-label text-black">Email</label>
-                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email" placeholder="e.g. example@gmail.com">
+                        <input type="email" class="form-control shadow-none text-black" id="{{ $login }}-email" name="{{ $login }}-email" placeholder="e.g. example@gmail.com" value="{{ old($login . '-email') }}">
                         @error($login . '-email')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-md-6 ps-1">
                         <label for="{{ $login }}-name" class="form-label text-black">Name</label>
-                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-name" name="{{ $login }}-name" placeholder="e.g. xyz organisation">
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-name" name="{{ $login }}-name" placeholder="e.g. xyz organisation" value="{{ old($login . '-name') }}">
                         @error($login . '-name')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-12">
                         <label for="{{ $login }}-address" class="form-label text-black">Address</label>
-                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address" name="{{ $login }}-address" placeholder="1234 Main St">
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address" name="{{ $login }}-address" placeholder="1234 Main St" value="{{ old($login . '-address') }}">
                         @error($login . '-address')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-12">
                         <label for="{{ $login }}-address-second" class="form-label text-black">Address 2</label>
-                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address-second" name="{{ $login }}-address-second" placeholder="Apartment, studio, or floor">
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-address-second" name="{{ $login }}-address-second" placeholder="Apartment, studio, or floor" value="{{ old($login . '-address-second') }}">
                         @error($login . '-address-second')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-md-4">
@@ -88,7 +100,7 @@
                         <select id="{{ $login }}-country" name="{{ $login }}-country" class="form-select shadow-none text-black">
                         </select>
                         @error($login . '-country')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-md-3 ps-2">
@@ -97,24 +109,23 @@
                             <option value="">Choose State</option>
                         </select>
                         @error($login . '-state')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-md-3 px-2">
                         <label for="{{ $login }}-city" class="form-label text-black">City</label>
                         <select id="{{ $login }}-city" name="{{ $login }}-city" class="form-select shadow-none text-black">
-                            <option selected>Choose city</option>
-                            <option>...</option>
+                            <option value="">Choose city</option>
                         </select>
                         @error($login . '-city')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-md-2">
                         <label for="{{ $login }}-zip" class="form-label text-black">Zip</label>
-                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-zip" name="{{ $login }}-zip">
+                        <input type="text" class="form-control shadow-none text-black" id="{{ $login }}-zip" name="{{ $login }}-zip" value="{{ old($login . '-zip') }}">
                         @error($login . '-zip')
-                        {{ $message }}
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-12 mt-4">
