@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\AdminVerify;
+use App\Models\ClientRegister;
 
 return [
 
@@ -9,6 +10,10 @@ return [
             'driver' => 'session',
             'provider' => 'admin_verifies',
         ],
+        'client' => [
+            'driver' => 'session',
+            'provider' => 'client_verifies',
+        ],
     ],
 
 
@@ -16,6 +21,10 @@ return [
         'admin_verifies' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', AdminVerify::class),
+        ],
+        'client_verifies' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', ClientRegister::class),
         ],
     ],
 

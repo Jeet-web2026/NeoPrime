@@ -4,7 +4,7 @@
             <div class="card border-0 shadow w-50 p-3">
                 <div class="card-body">
                     <h2 class="text-center fs-3 text-uppercase fw-bold mb-5">client login</h2>
-                    <form>
+                    <form action="{{ route('client-verify-login') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>

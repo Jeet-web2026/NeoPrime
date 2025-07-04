@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Authenticatable;
 
-class ClientRegister extends Model
+class ClientRegister extends Authenticatable
 {
     protected $fillable = [
         'email',

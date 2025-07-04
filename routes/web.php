@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
@@ -40,6 +41,14 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('admin-dashboard/add-services-description', 'ServicesDescription')->name('services-description');
         Route::post('admin-dashboard/add-career-vacancy', 'AddcareerVaccancy')->name('add-career-vacancy');
         Route::post('admin-dashboard/add-employee-details', 'AddEmployeeDetails')->name('add-employee-details');
+    });
+});
+
+Route::middleware(['auth:client'])->group(function () {
+    Route::controller(ClientController::class)->group(function () {
+        Route::prefix('client-dashboard')->group(function () {
+            Route::get('/', 'index')->name('client-dashboard');
+        });
     });
 });
 

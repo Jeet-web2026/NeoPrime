@@ -69,4 +69,20 @@ class AuthenticationController extends Controller
     {
         return view('client.client-verify');
     }
+
+    public function ClientVerifylogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $data = ClientRegister::where('email', $request->email)->where('password', $request->password)->first();
+        if(!$data) {
+            return redirect()->back()->with('error', 'Invalid credentials');
+        }else{
+            return redirect()->route('client-dashboard')->with('success', 'Login successful');
+        }
+
+    }
 }
