@@ -128,9 +128,10 @@
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="col-12 mt-4">
+                    <div class="col-12 mt-4 d-flex justify-content-center align-items-center">
                         <button type="submit" class="btn btn-primary shadow-none border-0 px-4 py-2">Register</button>
                     </div>
+                    <p class="text-capitalize text-center mb-0">already registered? <a href="{{ route('client-login-view') }}" class="text-capitalize text-decoration-none">click here for login</a></p>
                 </form>
             </div>
         </div>

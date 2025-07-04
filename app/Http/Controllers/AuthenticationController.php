@@ -56,11 +56,17 @@ class AuthenticationController extends Controller
             'country' => $request['client-country'],
             'state' => $request['client-state'],
             'city' => $request['client-city'],
-            'pincode' => $request['client-zip']
+            'pincode' => $request['client-zip'],
+            'password' => rand(1000000, 9999999),
         ];
 
         ClientRegister::create($matchData);
 
         return back()->with('success', 'Registered Successfully!');
+    }
+
+    public function Clientloginview()
+    {
+        return view('client.client-verify');
     }
 }

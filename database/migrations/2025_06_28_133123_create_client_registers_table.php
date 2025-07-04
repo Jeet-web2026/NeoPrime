@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('pincode');
+            $table->string('password');
             $table->timestamps();
         });
     }

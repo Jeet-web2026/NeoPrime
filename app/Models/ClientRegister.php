@@ -14,6 +14,7 @@ class ClientRegister extends Model
         'country',
         'state',
         'city',
-        'pincode'
+        'pincode',
+        'password'
     ];
 }
