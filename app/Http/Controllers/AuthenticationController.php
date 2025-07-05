@@ -7,6 +7,7 @@ use App\Http\Requests\ClientRegisterRequest;
 use App\Models\ClientRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 class AuthenticationController extends Controller
@@ -57,7 +58,6 @@ class AuthenticationController extends Controller
             'state' => $request['client-state'],
             'city' => $request['client-city'],
             'pincode' => $request['client-zip'],
-            'password' => rand(1000000, 9999999),
         ];
 
         ClientRegister::create($matchData);
@@ -74,15 +74,19 @@ class AuthenticationController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'required|confirmed|min:6',
         ]);
 
-        $data = ClientRegister::where('email', $request->email)->where('password', $request->password)->first();
-        if(!$data) {
-            return redirect()->back()->with('error', 'Invalid credentials');
-        }else{
-            return redirect()->route('client-dashboard')->with('success', 'Login successful');
+        $client = ClientRegister::where('email', $request->email)->first();
+        if (empty($client->password)) {
+            $client->password = Hash::make($request->password);
+            $client->save();
         }
 
+        if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('client-dashboard')->with('success', 'Logged in successfully!');
+        } else {
+            return back()->withErrors(['error' => 'Invalid credentials.']);
+        }
     }
 }

@@ -21,6 +21,7 @@ Route::controller(AuthenticationController::class)->group(function () {
     Route::get('admin-login', 'AdminLogin')->name('admin-login');
     Route::get('client-register', 'ClientsLogin')->name('client-login');
     Route::get('client-login', 'Clientloginview')->name('client-login-view');
+    Route::post('client-login', 'ClientVerifylogin')->name('client-verify-login');
     Route::post('admin-verify', 'AdminVerify')->name('admin-verify');
     Route::post('client-verify', 'ClientVerify')->name('client-verify');
     Route::post('admin-logout', 'AdminLogout')->name('admin-logout');
