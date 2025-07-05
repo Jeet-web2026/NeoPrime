@@ -49,6 +49,8 @@ Route::middleware(['auth:client'])->group(function () {
     Route::controller(ClientController::class)->group(function () {
         Route::prefix('client-dashboard')->group(function () {
             Route::get('/', 'index')->name('client-dashboard');
+            Route::get('product-view/{id}', 'productView')->name('client-product-view');
+            Route::post('place-order/{id}', 'productOrder')->name('client-product-order');
         });
     });
 });
